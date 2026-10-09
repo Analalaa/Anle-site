@@ -2,9 +2,11 @@
 
 Milo's bilingual static personal website: writing, photography, and small projects.
 
+Live site: <https://anlening.me/> · [中文首页](https://anlening.me/zh/index.html).
+
 ## Preview and deploy
 
-Publish `site/www.milo.me`. See [deployment and .me domain setup](docs/deployment.md) for the prepared GitHub Pages workflow and the one-time publishing-source change. The checked-in HTML works without a runtime, package install, database, or build step.
+Push `main` to publish through GitHub Actions. Source pages live in `site/www.milo.me`; that is a historical directory name. See [deployment and domain configuration](docs/deployment.md) for the active GitHub Pages and Spaceship setup. The checked-in HTML works without a runtime, package install, database, or build step.
 
 ```bash
 cd site/www.milo.me
