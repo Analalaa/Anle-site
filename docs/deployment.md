@@ -30,7 +30,7 @@ python3 scripts/export_site.py --output _site --base-url https://anlening.me
 
 正式域名：`anlening.me`，注册商与 DNS 服务为 Spaceship。2026-10-09 已完成 GitHub Pages 域名绑定及下表的五条解析记录。主域名证书已获批准，并已开启 **Enforce HTTPS**。证书由 GitHub Pages 管理，无需在 Spaceship 购买 SSL 或主机。
 
-上线验证：主域名的中英文首页、小作品页、样式、脚本、Prompts ZIP 与 Recoding APK 均已实际访问核对。`www.anlening.me` 配置为指向 `analalaa.github.io`，由 GitHub Pages 处理跳转。
+上线验证：主域名的中英文首页、小作品页、样式、脚本、Prompts ZIP 与 Recoding APK 均已实际访问核对。`www.anlening.me` 配置为指向 `analalaa.github.io`。已验证 `http://www.anlening.me/` 会跳转到 `https://anlening.me/`。截至本次检查，GitHub 签发的证书仅覆盖 `anlening.me`，`https://www.anlening.me/` 尚未通过证书校验；对外分享不带 `www` 的正式地址。后续需在 Pages 状态中确认 `www` 的证书覆盖后，再实际验证 HTTPS 跳转。
 
 以下配置适用于 `anlening.me`，并将 `www.anlening.me` 重定向到主域名：
 
