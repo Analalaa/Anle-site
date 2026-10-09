@@ -147,7 +147,6 @@ def main():
         # About retains all existing personal writing.
         body = heading('关于我' if zh else 'About me','保持好奇，慢慢生长。' if zh else 'Stay curious. Give things time to grow.')
         bio = '\n'.join(data['site'][lang]['original_bio']).replace('我同样喜欢文学与影视作品，也喜欢文学与影视作品。','我同样喜欢文学与影视作品。')
-        bio = bio.replace('我是安乐，also', '我是安乐，也可以叫我子溯，also').replace('I am Anle, also Milo An.', 'I am Anle, also Milo An. You can also call me Zisu (子溯).')
         body += '<div class="prose">' + bio + '</div>' + contact(lang)
         page('about.html','关于我' if zh else 'About me','about',body,'写作、摄影、运动、音乐，以及我想慢慢构建的生活。' if zh else 'Writing, photography, sport, music, and a life I am slowly making my own.')
         # Expressive project covers inside the shared site navigation and typography.
