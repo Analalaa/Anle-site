@@ -1,0 +1,492 @@
+{
+  "main": [
+    {
+      "src": "/photography/photos/01.jpg",
+      "alt": "Milo photography work 1",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "src": "/photography/photos/02.jpg",
+      "alt": "Milo photography work 2",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "src": "/photography/photos/03.jpg",
+      "alt": "Milo photography work 3",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/04.jpg",
+      "alt": "Milo photography work 4",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/05.jpg",
+      "alt": "Milo photography work 5",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/1.jpg",
+      "alt": "Milo photography work 6",
+      "width": 3601,
+      "height": 2700
+    },
+    {
+      "src": "/photography/photos/13_1.11.1.jpg",
+      "alt": "Milo photography work 7",
+      "width": 2000,
+      "height": 1500
+    },
+    {
+      "src": "/photography/photos/15_1.23.2.jpg",
+      "alt": "Milo photography work 8",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/1_1.4.3.jpg",
+      "alt": "Milo photography work 9",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/1_1.5.1.jpg",
+      "alt": "Milo photography work 10",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/1_2.7.1.jpg",
+      "alt": "Milo photography work 11",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/2.jpg",
+      "alt": "Milo photography work 12",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/2_1.1.2.jpg",
+      "alt": "Milo photography work 13",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/2_1.17.2.jpg",
+      "alt": "Milo photography work 14",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/2_1.7.1.jpg",
+      "alt": "Milo photography work 15",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/2_2.8.1.jpg",
+      "alt": "Milo photography work 17",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/3.jpg",
+      "alt": "Milo photography work 18",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/3_1.10.1.jpg",
+      "alt": "Milo photography work 19",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/3_1.16.1.jpg",
+      "alt": "Milo photography work 20",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/3_1.18.1.jpg",
+      "alt": "Milo photography work 21",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/3_1.4.1.jpg",
+      "alt": "Milo photography work 22",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/3_2.17.4.jpg",
+      "alt": "Milo photography work 23",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/4.jpg",
+      "alt": "Milo photography work 24",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/4_1.2.1.jpg",
+      "alt": "Milo photography work 25",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/4_1.20.2.jpg",
+      "alt": "Milo photography work 26",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/4_1.21.1.jpg",
+      "alt": "Milo photography work 27",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/4_1.5.2.jpg",
+      "alt": "Milo photography work 28",
+      "width": 2000,
+      "height": 1500
+    },
+    {
+      "src": "/photography/photos/4_2.17.5.jpg",
+      "alt": "Milo photography work 29",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/5.jpg",
+      "alt": "Milo photography work 30",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/5_1.18.2.jpg",
+      "alt": "Milo photography work 31",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/5_1.22.1.jpg",
+      "alt": "Milo photography work 32",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/5_1.6.1.jpg",
+      "alt": "Milo photography work 34",
+      "width": 2000,
+      "height": 1500
+    },
+    {
+      "src": "/photography/photos/5_2.17.6.jpg",
+      "alt": "Milo photography work 35",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/6.jpg",
+      "alt": "Milo photography work 36",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/6_1.12.1.jpg",
+      "alt": "Milo photography work 37",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/6_1.23.1.jpg",
+      "alt": "Milo photography work 38",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/6_3.2.1.jpg",
+      "alt": "Milo photography work 39",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/7_1.19.2.jpg",
+      "alt": "Milo photography work 40",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/7_1.32.1.jpg",
+      "alt": "Milo photography work 41",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/7_2.5.2.jpg",
+      "alt": "Milo photography work 42",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/8_1.34.1.jpg",
+      "alt": "Milo photography work 43",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/8_1.9.1.jpg",
+      "alt": "Milo photography work 44",
+      "width": 2000,
+      "height": 1500
+    },
+    {
+      "src": "/photography/photos/8_2.16.1.jpg",
+      "alt": "Milo photography work 45",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/9_2.2.2.jpg",
+      "alt": "Milo photography work 46",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/WechatIMG26.jpg",
+      "alt": "Milo photography work 47",
+      "width": 2298,
+      "height": 1614
+    },
+    {
+      "src": "/photography/photos/%E5%B0%81%E9%9D%A234.jpg",
+      "alt": "Milo photography work 48",
+      "width": 1620,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E5%B0%81%E9%9D%A243.jpg",
+      "alt": "Milo photography work 49",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-04-30%20003325_1.16.2.jpg",
+      "alt": "Milo photography work 50",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205228_1.24.1.jpg",
+      "alt": "Milo photography work 51",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205335_1.19.1.jpg",
+      "alt": "Milo photography work 52",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205355_1.26.1.jpg",
+      "alt": "Milo photography work 53",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205411_1.3.1.jpg",
+      "alt": "Milo photography work 54",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205525_1.27.1.jpg",
+      "alt": "Milo photography work 55",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205549_1.20.1.jpg",
+      "alt": "Milo photography work 56",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205604_1.10.1.jpg",
+      "alt": "Milo photography work 57",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205617_1.12.1.jpg",
+      "alt": "Milo photography work 58",
+      "width": 2880,
+      "height": 2160
+    },
+    {
+      "src": "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205643_1.11.1.jpg",
+      "alt": "Milo photography work 59",
+      "width": 2880,
+      "height": 2160
+    }
+  ],
+  "archive": [
+    {
+      "src": "/_next/police-in-the-1960s-6ee771c93742.jpg",
+      "alt": "六十年代的警察",
+      "width": 1276,
+      "height": 1920
+    },
+    {
+      "src": "/_next/a-wonderful-performance-15138ec59dc7.jpg",
+      "alt": "精彩的表演",
+      "width": 1920,
+      "height": 1277
+    },
+    {
+      "src": "/_next/the-windmill-looks-very-comfortable-32fd406ecebd.jpg",
+      "alt": "这台风车看起来很舒适",
+      "width": 1920,
+      "height": 2887
+    },
+    {
+      "src": "/_next/quiet-lake-b1190d685e9d.jpg",
+      "alt": "宁静的湖",
+      "width": 1920,
+      "height": 1277
+    },
+    {
+      "src": "/_next/paddleboarding-might-be-the-best-water-sport-1e464873d815.jpg",
+      "alt": "桨板运动可能是最好的水上运动",
+      "width": 1920,
+      "height": 2879
+    },
+    {
+      "src": "/_next/let-s-go-hiking-together-5bd9278f140e.jpg",
+      "alt": "我们一起去徒步吧",
+      "width": 1920,
+      "height": 2879
+    },
+    {
+      "src": "/_next/south-of-the-north-f4f83094dedb.jpg",
+      "alt": "北境之南",
+      "width": 5464,
+      "height": 8192
+    },
+    {
+      "src": "/_next/film-camera-and-snowy-mountains-e60e86109ccc.jpg",
+      "alt": "胶片相机和雪山",
+      "width": 1920,
+      "height": 1281
+    },
+    {
+      "src": "/_next/lake-louise-from-the-top-of-the-mountain-a6d6228f7216.jpg",
+      "alt": "从山顶俯瞰露易丝湖",
+      "width": 1281,
+      "height": 1920
+    },
+    {
+      "src": "/_next/winter-lake-6c5fac1b5f1a.jpg",
+      "alt": "冬湖",
+      "width": 1080,
+      "height": 1619
+    },
+    {
+      "src": "/_next/mountain-peaks-through-the-trees-48e9b72d5a4a.jpg",
+      "alt": "透过树木的山峰",
+      "width": 854,
+      "height": 1280
+    },
+    {
+      "src": "/_next/beautiful-lake-c2a9f5251cd9.jpg",
+      "alt": "美丽的湖泊",
+      "width": 1280,
+      "height": 854
+    },
+    {
+      "src": "/_next/kamakura-daibutsu-9a4b6b6e7bc2.jpg",
+      "alt": "镰仓大佛",
+      "width": 6320,
+      "height": 9504
+    },
+    {
+      "src": "/_next/in-the-evening-in-yokohama-take-a-boat-out-to-sea-91d0627c3083.jpg",
+      "alt": "横滨晚上乘船出海",
+      "width": 1920,
+      "height": 1281
+    },
+    {
+      "src": "/_next/under-mount-fuji-at-dusk-6f9d0a19ab02.jpg",
+      "alt": "富士山下，黄昏时分",
+      "width": 1920,
+      "height": 2879
+    },
+    {
+      "src": "/_next/the-man-who-just-came-back-from-the-market-e052ce6e337a.jpg",
+      "alt": "刚从市场回来的人",
+      "width": 1920,
+      "height": 1277
+    },
+    {
+      "src": "/_next/visitors-at-the-exhibition-484a6532533e.jpg",
+      "alt": "展览观众",
+      "width": 1080,
+      "height": 1624
+    },
+    {
+      "src": "/_next/the-child-pushing-the-baby-stroller-753a9093f955.jpg",
+      "alt": "推着婴儿车的孩子",
+      "width": 1920,
+      "height": 1277
+    },
+    {
+      "src": "/_next/several-girls-are-helping-blind-people-d90caa512786.jpg",
+      "alt": "几个女孩正在帮助盲人",
+      "width": 1920,
+      "height": 1277
+    },
+    {
+      "src": "/_next/the-moving-small-train-eebdfd079d21.jpg",
+      "alt": "移动的小火车",
+      "width": 2887,
+      "height": 1920
+    },
+    {
+      "src": "/_next/chaka-yan-lake-7e1865538ba2.jpg",
+      "alt": "茶卡盐湖",
+      "width": 1277,
+      "height": 1920
+    },
+    {
+      "src": "/_next/a-plant-hairpin-ac30bdc75e86.jpg",
+      "alt": "植物发夹",
+      "width": 2880,
+      "height": 1920
+    },
+    {
+      "src": "/_next/cute-little-bird-362a3ee0dfd1.jpg",
+      "alt": "可爱的小鸟",
+      "width": 1281,
+      "height": 1920
+    },
+    {
+      "src": "/_next/the-child-who-plays-games-29bf4df41a92.jpg",
+      "alt": "玩游戏的孩子",
+      "width": 1920,
+      "height": 1277
+    }
+  ]
+}

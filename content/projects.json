@@ -23,7 +23,8 @@
           "索引本机保存的对话，不依赖嵌入模型或额外的 API Key。"
         ]
       ],
-      "note": "目前是自用的本地插件，公开安装入口正在整理。"
+      "note": "提供 macOS 本地安装包，需要 Codex 和 Python 3.9 或以上版本。安装后检索的是使用者自己电脑里的对话。",
+      "linkLabel": "安装插件"
     },
     "en": {
       "category": "Codex plugin",
@@ -44,8 +45,10 @@
           "Search conversations saved on your computer, without an embedding model or an extra API key."
         ]
       ],
-      "note": "A personal local plugin. A public installation link is being prepared."
-    }
+      "note": "A local installation package for macOS, requiring Codex and Python 3.9 or newer. It searches conversations stored on the installing user’s own computer.",
+      "linkLabel": "Install plugin"
+    },
+    "download": "/downloads/prompts.zip"
   },
   {
     "slug": "date-with-me",
@@ -53,14 +56,14 @@
     "visual": "date",
     "url": null,
     "zh": {
-      "category": "生活 / 互动邀请",
+      "category": "生活 / 波普色块邀请",
       "tagline": "把「下次见」，变成一个具体的日子。",
-      "description": "一份给朋友的见面邀请。选个时间，挑件想一起做的事，让约会从一句话开始发生。",
-      "intro": "也叫「Date with Milo · 和安乐约个会」。把来回商量的时间和安排，放进一张可以慢慢填写的邀请里。见面、散步、吃点东西，或者只是远程聊聊天。",
+      "description": "红、黄、蓝、绿，一张热闹的见面邀请。选好时间和想一起做的事，把「有空再见」变成一个计划。",
+      "intro": "「Date with Milo · 和安乐约个会」的波普色块版。从一句「和安乐出去玩？」开始，选一个空闲时段，再一起决定去散步、吃饭，还是聊聊天。",
       "features": [
         [
-          "先留出时间",
-          "从日历和可选时段开始，为一次相处留出位置。"
+          "先留出一小时",
+          "在日历中选择可约的时段，已经约满的时间会显示占用状态。"
         ],
         [
           "一起做点什么",
@@ -71,17 +74,19 @@
           "留下称呼和联系邮箱，回看这次约会的具体安排。"
         ]
       ],
-      "note": "一份给重要朋友的邀请。公开体验入口正在整理。"
+      "note": "这里展示的是新版色块设计，在线体验待发布。",
+      "linkLabel": "和我约个会",
+      "availabilityLabel": "色块版待发布"
     },
     "en": {
-      "category": "Life / Interactive invitation",
+      "category": "Life / Pop-art invitation",
       "tagline": "Give “let’s meet sometime” a date.",
-      "description": "An invitation for friends. Pick a time and something to do together, and turn a passing thought into a plan.",
-      "intro": "Also called Date with Milo. An invitation that gives the back-and-forth of making plans a little room: meet up, take a walk, share a meal, or simply catch up online.",
+      "description": "Red, yellow, blue, and green. A playful invitation to choose a time, pick an activity, and make a plan together.",
+      "intro": "The pop-art edition of Date with Milo. Start with “Want to hang out?”, find a free hour, then choose a walk, a meal, or a conversation.",
       "features": [
         [
-          "Make time",
-          "Start with a date and an available time slot."
+          "Make an hour",
+          "Choose an available time in the calendar. Booked slots show their occupied status."
         ],
         [
           "Make a little plan",
@@ -92,7 +97,9 @@
           "Add your name and email, then review the details of the invitation."
         ]
       ],
-      "note": "An invitation for people I care about. A public link is being prepared."
+      "note": "This is the new pop-art edition. Its online experience is awaiting publication.",
+      "linkLabel": "Make a plan",
+      "availabilityLabel": "Pop-art edition coming soon"
     }
   },
   {
@@ -122,7 +129,7 @@
           "在声部图与情绪记录里，回看提交过的文字、图片和情绪标签；也可以移除某次输入对应的声部。"
         ]
       ],
-      "note": "图片内容的解读需要启用图像理解服务；未启用或分析失败时，使用默认图片情绪。在线体验入口正在整理。"
+      "note": "在线体验尚未开放。图片解读需要图像理解服务；未启用或分析失败时，使用默认图片情绪。"
     },
     "en": {
       "category": "Sound / Words & images",
@@ -143,14 +150,14 @@
           "Revisit submitted words, images, and mood labels in the layer map and emotional archive, or remove an entry and its musical layer."
         ]
       ],
-      "note": "Interpreting image content requires an enabled vision service. When it is unavailable or analysis fails, images use a default mood. A public link is being prepared."
+      "note": "An online experience is not available yet. Image interpretation requires a vision service; a default image mood is used when it is unavailable."
     }
   },
   {
     "slug": "colormuse",
     "name": "Color Muse",
     "visual": "color",
-    "url": null,
+    "url": "https://analalaa.github.io/color/",
     "source": "https://github.com/Analalaa/color",
     "zh": {
       "category": "图像 / 色彩工具",
@@ -171,7 +178,8 @@
           "下载处理后的图片，或导出 .CUBE LUT，继续在其他调色工具中使用。"
         ]
       ],
-      "note": "图像处理在浏览器中进行。项目源码已提供，在线体验入口待补充。"
+      "note": "打开网页即可使用。图像处理在浏览器中进行，照片无需上传到服务器。",
+      "linkLabel": "在线体验"
     },
     "en": {
       "category": "Image / Color tool",
@@ -192,7 +200,62 @@
           "Download the image or export a .CUBE LUT to continue in another color-grading tool."
         ]
       ],
-      "note": "Image processing happens in your browser. Source code is available; a live link is still to come."
+      "note": "Open the website to get started. Images are processed in your browser without being uploaded to a server.",
+      "linkLabel": "Try it online"
+    }
+  },
+  {
+    "slug": "recoding",
+    "name": "Recoding · 随记",
+    "visual": "recoding",
+    "url": null,
+    "download": "/downloads/recoding-0.6.1.apk",
+    "installation": "android",
+    "version": "0.6.1-device",
+    "downloadSize": "1.28 MiB",
+    "zh": {
+      "category": "记录 / Android 应用",
+      "tagline": "先记下来，让想法慢慢长大。",
+      "description": "文字、照片和一段原声，随手放进同一页。在自己的手机里保存、整理，再回到那些值得留下的瞬间。",
+      "intro": "随记是一个从书写开始的本地记录小工具。打开就是新的一页，不必先想标题，也不用登录。先把念头留下，再用文件夹和标签，慢慢整理自己的世界。",
+      "features": [
+        [
+          "打开，就写",
+          "正文优先，自动保存。文字误删后可以撤销，让记录更轻松一些。"
+        ],
+        [
+          "把画面和声音留下",
+          "一条记录里放入多张照片，也可以录下原声、回放语音。照片支持放大查看。"
+        ],
+        [
+          "整理，再带走",
+          "用文件夹、标签与搜索找回记录，也可以导出包含文字、照片和音频的 ZIP。"
+        ]
+      ],
+      "note": "Android 8.0 及以上测试版，记录保存在本机。离线语音转文字尚未接入，真机体验仍待进一步验证。",
+      "linkLabel": "下载 Android 版"
+    },
+    "en": {
+      "category": "Notes / Android app",
+      "tagline": "Catch a thought. Give it room to grow.",
+      "description": "Keep words, photographs, and original audio on the same page. Save them on your phone, organize them, and return to moments worth keeping.",
+      "intro": "Suiji is a local notebook that starts with writing. Open a fresh page, skip the title if you like, and put a thought down without signing in. Organize your little world with folders and tags whenever you are ready.",
+      "features": [
+        [
+          "Open and write",
+          "Start with the body, save automatically, and undo accidental text edits."
+        ],
+        [
+          "Keep the picture and the sound",
+          "Add several photos, zoom in to explore them, or record and play back original audio."
+        ],
+        [
+          "Find it and take it with you",
+          "Use folders, tags, and search, or export a ZIP containing your text, photographs, and audio."
+        ]
+      ],
+      "note": "A test release for Android 8.0+. Notes stay on your device. Offline speech-to-text is not yet available; real-device experience still needs further validation.",
+      "linkLabel": "Download for Android"
     }
   }
 ]
