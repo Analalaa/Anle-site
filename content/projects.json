@@ -1,0 +1,198 @@
+[
+  {
+    "slug": "prompts",
+    "name": "Prompts",
+    "visual": "prompts",
+    "url": null,
+    "zh": {
+      "category": "Codex 插件",
+      "tagline": "让好问题，不止用一次。",
+      "description": "找回自己写过的 Prompt、模型的回答和当时的上下文。把散落在对话里的灵感，重新放回手边。",
+      "intro": "有些问题问得很好，有些回答值得再读。Prompts 是我给自己做的 Codex 对话检索工具，让已经发生过的思考，可以在需要的时候再次派上用场。",
+      "features": [
+        [
+          "找回一句话",
+          "按关键词搜索自己写过的 Prompt 或模型回答，也可以在不同项目之间查找。"
+        ],
+        [
+          "把上下文一起带回来",
+          "展开匹配的消息，阅读前后对话，再回到原来的任务。"
+        ],
+        [
+          "留在自己的电脑上",
+          "索引本机保存的对话，不依赖嵌入模型或额外的 API Key。"
+        ]
+      ],
+      "note": "目前是自用的本地插件，公开安装入口正在整理。"
+    },
+    "en": {
+      "category": "Codex plugin",
+      "tagline": "A good question deserves a second life.",
+      "description": "Find your prompts, model replies, and the conversations around them. Bring a useful thought back within reach.",
+      "intro": "Some questions are worth asking again. Some answers are worth keeping. I made Prompts to search my own Codex conversations and return to ideas when I need them.",
+      "features": [
+        [
+          "Find a thought",
+          "Search prompts and replies by keyword, within a project or across projects."
+        ],
+        [
+          "Keep the context",
+          "Read the surrounding conversation, then open the original task."
+        ],
+        [
+          "Keep it local",
+          "Search conversations saved on your computer, without an embedding model or an extra API key."
+        ]
+      ],
+      "note": "A personal local plugin. A public installation link is being prepared."
+    }
+  },
+  {
+    "slug": "date-with-me",
+    "name": "Date with me",
+    "visual": "date",
+    "url": null,
+    "zh": {
+      "category": "生活 / 互动邀请",
+      "tagline": "把「下次见」，变成一个具体的日子。",
+      "description": "一份给朋友的见面邀请。选个时间，挑件想一起做的事，让约会从一句话开始发生。",
+      "intro": "也叫「Date with Milo · 和安乐约个会」。把来回商量的时间和安排，放进一张可以慢慢填写的邀请里。见面、散步、吃点东西，或者只是远程聊聊天。",
+      "features": [
+        [
+          "先留出时间",
+          "从日历和可选时段开始，为一次相处留出位置。"
+        ],
+        [
+          "一起做点什么",
+          "选一个活动方向，写下自己的主意，或者把安排交给我。"
+        ],
+        [
+          "让邀请有个落点",
+          "留下称呼和联系邮箱，回看这次约会的具体安排。"
+        ]
+      ],
+      "note": "一份给重要朋友的邀请。公开体验入口正在整理。"
+    },
+    "en": {
+      "category": "Life / Interactive invitation",
+      "tagline": "Give “let’s meet sometime” a date.",
+      "description": "An invitation for friends. Pick a time and something to do together, and turn a passing thought into a plan.",
+      "intro": "Also called Date with Milo. An invitation that gives the back-and-forth of making plans a little room: meet up, take a walk, share a meal, or simply catch up online.",
+      "features": [
+        [
+          "Make time",
+          "Start with a date and an available time slot."
+        ],
+        [
+          "Make a little plan",
+          "Choose an activity, suggest your own idea, or leave the planning to me."
+        ],
+        [
+          "Bring it together",
+          "Add your name and email, then review the details of the invitation."
+        ]
+      ],
+      "note": "An invitation for people I care about. A public link is being prepared."
+    }
+  },
+  {
+    "slug": "mood-recipe",
+    "aliases": [
+      "inner-music"
+    ],
+    "name": "Mood Recipe",
+    "visual": "music",
+    "url": null,
+    "zh": {
+      "category": "声音 / 文字与图像",
+      "tagline": "把此刻的文字与画面，加入音乐。",
+      "description": "写下一段感受，或上传一张图片。让每一次输入化作新的音乐声部，改变背景音乐的情绪与走向。",
+      "intro": "把感受当作食材，把音乐当作一份慢慢生长的配方。写下一段关于气味、光线、触感或记忆的文字，也可以上传一张图片，让这一刻的情绪进入正在播放的音乐。",
+      "features": [
+        [
+          "文字，或一张图",
+          "描述此刻的心情与感官记忆，或上传 PNG、JPEG、WebP 图片，作为音乐的情绪输入。"
+        ],
+        [
+          "一层一层，成为音乐",
+          "每次输入都会加入独立的音乐声部，与已有声音叠加，让节奏、音色和氛围逐渐改变。"
+        ],
+        [
+          "留下情绪的谱子",
+          "在声部图与情绪记录里，回看提交过的文字、图片和情绪标签；也可以移除某次输入对应的声部。"
+        ]
+      ],
+      "note": "图片内容的解读需要启用图像理解服务；未启用或分析失败时，使用默认图片情绪。在线体验入口正在整理。"
+    },
+    "en": {
+      "category": "Sound / Words & images",
+      "tagline": "Add a moment to the music.",
+      "description": "Write a feeling or upload an image. Each input becomes a new musical layer, changing the mood and direction of the background sound.",
+      "intro": "Treat a feeling as an ingredient, and music as a recipe that keeps growing. Describe a scent, a texture, a memory, or a kind of light — or upload an image — and let that moment become part of the music.",
+      "features": [
+        [
+          "Words, or a picture",
+          "Describe a mood or a sensory memory, or upload a PNG, JPEG, or WebP image as an emotional input."
+        ],
+        [
+          "Build a piece, layer by layer",
+          "Each entry adds an independent musical layer alongside earlier sounds, gradually changing the rhythm, timbre, and atmosphere."
+        ],
+        [
+          "Keep an emotional score",
+          "Revisit submitted words, images, and mood labels in the layer map and emotional archive, or remove an entry and its musical layer."
+        ]
+      ],
+      "note": "Interpreting image content requires an enabled vision service. When it is unavailable or analysis fails, images use a default mood. A public link is being prepared."
+    }
+  },
+  {
+    "slug": "colormuse",
+    "name": "Color Muse",
+    "visual": "color",
+    "url": null,
+    "source": "https://github.com/Analalaa/color",
+    "zh": {
+      "category": "图像 / 色彩工具",
+      "tagline": "借一张图的颜色，讲自己的故事。",
+      "description": "把喜欢的参考图变成照片的色彩灵感。迁移色调、调整强度，再把这份氛围带回自己的创作。",
+      "intro": "遇到一张喜欢的照片时，常常最先被它的颜色打动。Color Muse 试着把这种直觉变成一个小工具：给它一张参考图，看看自己的照片能长出什么样的色彩。",
+      "features": [
+        [
+          "从喜欢的颜色开始",
+          "上传自己的照片，选择预设风格或一张自己的参考图。"
+        ],
+        [
+          "找到刚好的程度",
+          "调整迁移强度，对比处理前后的色彩，让氛围适合自己的画面。"
+        ],
+        [
+          "带回创作流程",
+          "下载处理后的图片，或导出 .CUBE LUT，继续在其他调色工具中使用。"
+        ]
+      ],
+      "note": "图像处理在浏览器中进行。项目源码已提供，在线体验入口待补充。"
+    },
+    "en": {
+      "category": "Image / Color tool",
+      "tagline": "Borrow a palette. Tell your own story.",
+      "description": "Turn a reference image into color inspiration for your photos. Transfer a mood, tune its strength, and make it your own.",
+      "intro": "Sometimes the first thing I fall for in a photograph is its color. Color Muse turns that instinct into a small tool: give it a reference, and see what palette your own image might grow into.",
+      "features": [
+        [
+          "Start with a palette",
+          "Upload a photo and choose a built-in style or your own reference image."
+        ],
+        [
+          "Find the right balance",
+          "Adjust the transfer strength and compare the before and after."
+        ],
+        [
+          "Keep creating",
+          "Download the image or export a .CUBE LUT to continue in another color-grading tool."
+        ]
+      ],
+      "note": "Image processing happens in your browser. Source code is available; a live link is still to come."
+    }
+  }
+]
