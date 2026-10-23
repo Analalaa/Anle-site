@@ -1,0 +1,1541 @@
+{
+  "/photography/photos/01.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 403768,
+    "variants": [
+      {
+        "src": "/photography/optimized/1cd8c360af95cc74-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 7344
+      },
+      {
+        "src": "/photography/optimized/1cd8c360af95cc74-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 18024
+      }
+    ]
+  },
+  "/photography/photos/02.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 357928,
+    "variants": [
+      {
+        "src": "/photography/optimized/d5913c867b99190c-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 14388
+      },
+      {
+        "src": "/photography/optimized/d5913c867b99190c-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 28506
+      }
+    ]
+  },
+  "/photography/photos/03.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 819218,
+    "variants": [
+      {
+        "src": "/photography/optimized/941482b38a528939-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 12110
+      },
+      {
+        "src": "/photography/optimized/941482b38a528939-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 47516
+      }
+    ]
+  },
+  "/photography/photos/04.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 653312,
+    "variants": [
+      {
+        "src": "/photography/optimized/0fb9fc6b4d5eac3b-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 8624
+      },
+      {
+        "src": "/photography/optimized/0fb9fc6b4d5eac3b-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 31872
+      }
+    ]
+  },
+  "/photography/photos/05.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 476765,
+    "variants": [
+      {
+        "src": "/photography/optimized/a4cd29f717abaf58-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 8850
+      },
+      {
+        "src": "/photography/optimized/a4cd29f717abaf58-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 25752
+      }
+    ]
+  },
+  "/photography/photos/1.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "sourceBytes": 835364,
+    "variants": [
+      {
+        "src": "/photography/optimized/0fb4eb0992d33e55-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 34568
+      },
+      {
+        "src": "/photography/optimized/0fb4eb0992d33e55-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 93888
+      }
+    ]
+  },
+  "/photography/photos/13_1.11.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 686329,
+    "variants": [
+      {
+        "src": "/photography/optimized/70f4150696a44e7f-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 32116
+      },
+      {
+        "src": "/photography/optimized/70f4150696a44e7f-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 79552
+      }
+    ]
+  },
+  "/photography/photos/15_1.23.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 494954,
+    "variants": [
+      {
+        "src": "/photography/optimized/224d157a955039ac-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 19076
+      },
+      {
+        "src": "/photography/optimized/224d157a955039ac-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 37286
+      }
+    ]
+  },
+  "/photography/photos/1_1.4.3.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 821530,
+    "variants": [
+      {
+        "src": "/photography/optimized/c26b6a8e6703be71-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 33914
+      },
+      {
+        "src": "/photography/optimized/c26b6a8e6703be71-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 92410
+      }
+    ]
+  },
+  "/photography/photos/1_1.5.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 786141,
+    "variants": [
+      {
+        "src": "/photography/optimized/24844cce058aaf79-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 24242
+      },
+      {
+        "src": "/photography/optimized/24844cce058aaf79-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 67698
+      }
+    ]
+  },
+  "/photography/photos/1_2.7.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 545519,
+    "variants": [
+      {
+        "src": "/photography/optimized/2dce3b06fdf377f3-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 30030
+      },
+      {
+        "src": "/photography/optimized/2dce3b06fdf377f3-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 59960
+      }
+    ]
+  },
+  "/photography/photos/2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 979672,
+    "variants": [
+      {
+        "src": "/photography/optimized/a1fc78aa2a31365e-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 24076
+      },
+      {
+        "src": "/photography/optimized/a1fc78aa2a31365e-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 78716
+      }
+    ]
+  },
+  "/photography/photos/2_1.1.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 489486,
+    "variants": [
+      {
+        "src": "/photography/optimized/ebd9dbd4b742e8bb-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 17220
+      },
+      {
+        "src": "/photography/optimized/ebd9dbd4b742e8bb-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 42512
+      }
+    ]
+  },
+  "/photography/photos/2_1.17.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 685434,
+    "variants": [
+      {
+        "src": "/photography/optimized/ea8508bfa46aeaa3-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 16548
+      },
+      {
+        "src": "/photography/optimized/ea8508bfa46aeaa3-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 55542
+      }
+    ]
+  },
+  "/photography/photos/2_1.7.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 700926,
+    "variants": [
+      {
+        "src": "/photography/optimized/a0b0c0a1dce45384-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 9284
+      },
+      {
+        "src": "/photography/optimized/a0b0c0a1dce45384-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 39180
+      }
+    ]
+  },
+  "/photography/photos/2_2.8.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 498515,
+    "variants": [
+      {
+        "src": "/photography/optimized/40cfd64eae01196a-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 20942
+      },
+      {
+        "src": "/photography/optimized/40cfd64eae01196a-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 47740
+      }
+    ]
+  },
+  "/photography/photos/3.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 469190,
+    "variants": [
+      {
+        "src": "/photography/optimized/ff130f4efec39184-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 17416
+      },
+      {
+        "src": "/photography/optimized/ff130f4efec39184-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 43788
+      }
+    ]
+  },
+  "/photography/photos/3_1.10.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 286635,
+    "variants": [
+      {
+        "src": "/photography/optimized/f668a3347d828ff3-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 10566
+      },
+      {
+        "src": "/photography/optimized/f668a3347d828ff3-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 20168
+      }
+    ]
+  },
+  "/photography/photos/3_1.16.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 841632,
+    "variants": [
+      {
+        "src": "/photography/optimized/1e5862784319b9e5-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 36488
+      },
+      {
+        "src": "/photography/optimized/1e5862784319b9e5-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 90318
+      }
+    ]
+  },
+  "/photography/photos/3_1.18.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 900746,
+    "variants": [
+      {
+        "src": "/photography/optimized/465684b6b495d380-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 31228
+      },
+      {
+        "src": "/photography/optimized/465684b6b495d380-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 102226
+      }
+    ]
+  },
+  "/photography/photos/3_1.4.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 591478,
+    "variants": [
+      {
+        "src": "/photography/optimized/629ebf3c9e9eeb4f-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 7640
+      },
+      {
+        "src": "/photography/optimized/629ebf3c9e9eeb4f-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 30198
+      }
+    ]
+  },
+  "/photography/photos/3_2.17.4.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 283447,
+    "variants": [
+      {
+        "src": "/photography/optimized/557fd2dcbf995396-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 6306
+      },
+      {
+        "src": "/photography/optimized/557fd2dcbf995396-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 13290
+      }
+    ]
+  },
+  "/photography/photos/4.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 1048509,
+    "variants": [
+      {
+        "src": "/photography/optimized/65469baf148d4cb1-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 49734
+      },
+      {
+        "src": "/photography/optimized/65469baf148d4cb1-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 129390
+      }
+    ]
+  },
+  "/photography/photos/4_1.2.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 326665,
+    "variants": [
+      {
+        "src": "/photography/optimized/0f223ee64b9ff020-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 14406
+      },
+      {
+        "src": "/photography/optimized/0f223ee64b9ff020-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 30124
+      }
+    ]
+  },
+  "/photography/photos/4_1.20.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 758523,
+    "variants": [
+      {
+        "src": "/photography/optimized/07f36ebd7f213c14-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 13972
+      },
+      {
+        "src": "/photography/optimized/07f36ebd7f213c14-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 75218
+      }
+    ]
+  },
+  "/photography/photos/4_1.21.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 905272,
+    "variants": [
+      {
+        "src": "/photography/optimized/cf940181a18b7f0d-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 38250
+      },
+      {
+        "src": "/photography/optimized/cf940181a18b7f0d-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 98972
+      }
+    ]
+  },
+  "/photography/photos/4_1.5.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 384297,
+    "variants": [
+      {
+        "src": "/photography/optimized/597afbdb28e1d324-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 11682
+      },
+      {
+        "src": "/photography/optimized/597afbdb28e1d324-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 23406
+      }
+    ]
+  },
+  "/photography/photos/4_2.17.5.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 243176,
+    "variants": [
+      {
+        "src": "/photography/optimized/711eccb59308cdea-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 5270
+      },
+      {
+        "src": "/photography/optimized/711eccb59308cdea-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 9826
+      }
+    ]
+  },
+  "/photography/photos/5.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 660437,
+    "variants": [
+      {
+        "src": "/photography/optimized/d56b68a6c452946b-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 20936
+      },
+      {
+        "src": "/photography/optimized/d56b68a6c452946b-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 55980
+      }
+    ]
+  },
+  "/photography/photos/5_1.18.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 638631,
+    "variants": [
+      {
+        "src": "/photography/optimized/e927dc9841fcacc5-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 7908
+      },
+      {
+        "src": "/photography/optimized/e927dc9841fcacc5-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 40130
+      }
+    ]
+  },
+  "/photography/photos/5_1.22.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 819847,
+    "variants": [
+      {
+        "src": "/photography/optimized/1aff0e74c88935e3-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 27354
+      },
+      {
+        "src": "/photography/optimized/1aff0e74c88935e3-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 91660
+      }
+    ]
+  },
+  "/photography/photos/5_1.6.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 889806,
+    "variants": [
+      {
+        "src": "/photography/optimized/58165c8ef044af62-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 36206
+      },
+      {
+        "src": "/photography/optimized/58165c8ef044af62-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 101354
+      }
+    ]
+  },
+  "/photography/photos/5_2.17.6.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 258805,
+    "variants": [
+      {
+        "src": "/photography/optimized/8388093fb498b9d6-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 10020
+      },
+      {
+        "src": "/photography/optimized/8388093fb498b9d6-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 19846
+      }
+    ]
+  },
+  "/photography/photos/6.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 494617,
+    "variants": [
+      {
+        "src": "/photography/optimized/0fdc54776642b5ca-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 9568
+      },
+      {
+        "src": "/photography/optimized/0fdc54776642b5ca-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 25596
+      }
+    ]
+  },
+  "/photography/photos/6_1.12.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 416023,
+    "variants": [
+      {
+        "src": "/photography/optimized/d8df34e420908e61-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 16378
+      },
+      {
+        "src": "/photography/optimized/d8df34e420908e61-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 32142
+      }
+    ]
+  },
+  "/photography/photos/6_1.23.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 715797,
+    "variants": [
+      {
+        "src": "/photography/optimized/33b72b9b95fe3ad7-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 21514
+      },
+      {
+        "src": "/photography/optimized/33b72b9b95fe3ad7-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 51044
+      }
+    ]
+  },
+  "/photography/photos/6_3.2.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 421460,
+    "variants": [
+      {
+        "src": "/photography/optimized/013d7642fc7cce38-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 10124
+      },
+      {
+        "src": "/photography/optimized/013d7642fc7cce38-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 19450
+      }
+    ]
+  },
+  "/photography/photos/7_1.19.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 998529,
+    "variants": [
+      {
+        "src": "/photography/optimized/a95b7d22753e823b-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 53502
+      },
+      {
+        "src": "/photography/optimized/a95b7d22753e823b-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 129396
+      }
+    ]
+  },
+  "/photography/photos/7_1.32.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 720908,
+    "variants": [
+      {
+        "src": "/photography/optimized/70d7dbbd1aa975ef-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 25094
+      },
+      {
+        "src": "/photography/optimized/70d7dbbd1aa975ef-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 66060
+      }
+    ]
+  },
+  "/photography/photos/7_2.5.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 872281,
+    "variants": [
+      {
+        "src": "/photography/optimized/d3ef1f7cb7424bbc-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 45854
+      },
+      {
+        "src": "/photography/optimized/d3ef1f7cb7424bbc-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 113312
+      }
+    ]
+  },
+  "/photography/photos/8_1.34.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 395342,
+    "variants": [
+      {
+        "src": "/photography/optimized/18bd7825b9b0dae6-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 5600
+      },
+      {
+        "src": "/photography/optimized/18bd7825b9b0dae6-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 13660
+      }
+    ]
+  },
+  "/photography/photos/8_1.9.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 954101,
+    "variants": [
+      {
+        "src": "/photography/optimized/e77ebc1832d7c415-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 40830
+      },
+      {
+        "src": "/photography/optimized/e77ebc1832d7c415-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 114622
+      }
+    ]
+  },
+  "/photography/photos/8_2.16.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 226101,
+    "variants": [
+      {
+        "src": "/photography/optimized/7704161195feaf33-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 6704
+      },
+      {
+        "src": "/photography/optimized/7704161195feaf33-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 12714
+      }
+    ]
+  },
+  "/photography/photos/9_2.2.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 659147,
+    "variants": [
+      {
+        "src": "/photography/optimized/d86ab49c8fa119f1-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 24942
+      },
+      {
+        "src": "/photography/optimized/d86ab49c8fa119f1-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 64642
+      }
+    ]
+  },
+  "/photography/photos/WechatIMG26.jpg": {
+    "width": 1920,
+    "height": 1348,
+    "sourceBytes": 409764,
+    "variants": [
+      {
+        "src": "/photography/optimized/666733c2b681fc98-480.webp",
+        "width": 480,
+        "height": 337,
+        "bytes": 18812
+      },
+      {
+        "src": "/photography/optimized/666733c2b681fc98-800.webp",
+        "width": 800,
+        "height": 562,
+        "bytes": 46584
+      }
+    ]
+  },
+  "/photography/photos/%E5%B0%81%E9%9D%A234.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "sourceBytes": 636187,
+    "variants": [
+      {
+        "src": "/photography/optimized/28b37b2be23f2650-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 51870
+      },
+      {
+        "src": "/photography/optimized/28b37b2be23f2650-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 116098
+      }
+    ]
+  },
+  "/photography/photos/%E5%B0%81%E9%9D%A243.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 675891,
+    "variants": [
+      {
+        "src": "/photography/optimized/18daa3bb8e210cb3-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 24986
+      },
+      {
+        "src": "/photography/optimized/18daa3bb8e210cb3-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 69918
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-04-30%20003325_1.16.2.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 687396,
+    "variants": [
+      {
+        "src": "/photography/optimized/a95591830f3a2e1f-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 14948
+      },
+      {
+        "src": "/photography/optimized/a95591830f3a2e1f-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 52462
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205228_1.24.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 604205,
+    "variants": [
+      {
+        "src": "/photography/optimized/bfdded58c6d7933a-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 16032
+      },
+      {
+        "src": "/photography/optimized/bfdded58c6d7933a-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 48288
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205335_1.19.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 768808,
+    "variants": [
+      {
+        "src": "/photography/optimized/ddfaf037b4374e38-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 29226
+      },
+      {
+        "src": "/photography/optimized/ddfaf037b4374e38-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 85910
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205355_1.26.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 546793,
+    "variants": [
+      {
+        "src": "/photography/optimized/ef327ec2bd032218-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 20400
+      },
+      {
+        "src": "/photography/optimized/ef327ec2bd032218-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 45878
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205411_1.3.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 633506,
+    "variants": [
+      {
+        "src": "/photography/optimized/537c16c0db9dc913-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 20308
+      },
+      {
+        "src": "/photography/optimized/537c16c0db9dc913-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 54320
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205525_1.27.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 724431,
+    "variants": [
+      {
+        "src": "/photography/optimized/87c6c23591b1ae2c-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 30564
+      },
+      {
+        "src": "/photography/optimized/87c6c23591b1ae2c-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 79306
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205549_1.20.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 730650,
+    "variants": [
+      {
+        "src": "/photography/optimized/b6fa4ae251fa8437-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 27346
+      },
+      {
+        "src": "/photography/optimized/b6fa4ae251fa8437-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 76336
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205604_1.10.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 677296,
+    "variants": [
+      {
+        "src": "/photography/optimized/7a1b109c76ce5a58-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 28616
+      },
+      {
+        "src": "/photography/optimized/7a1b109c76ce5a58-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 71166
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205617_1.12.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 720928,
+    "variants": [
+      {
+        "src": "/photography/optimized/b35e192d186348d3-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 31364
+      },
+      {
+        "src": "/photography/optimized/b35e192d186348d3-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 76396
+      }
+    ]
+  },
+  "/photography/photos/%E9%9D%99%E5%B8%A7%202025-05-14%20205643_1.11.1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "sourceBytes": 640713,
+    "variants": [
+      {
+        "src": "/photography/optimized/df9d863936875e25-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 24246
+      },
+      {
+        "src": "/photography/optimized/df9d863936875e25-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 62630
+      }
+    ]
+  },
+  "/_next/police-in-the-1960s-6ee771c93742.jpg": {
+    "width": 1276,
+    "height": 1920,
+    "sourceBytes": 102846,
+    "variants": [
+      {
+        "src": "/photography/optimized/f55dcc173b2710af-480.webp",
+        "width": 480,
+        "height": 722,
+        "bytes": 21888
+      },
+      {
+        "src": "/photography/optimized/f55dcc173b2710af-800.webp",
+        "width": 800,
+        "height": 1204,
+        "bytes": 40928
+      }
+    ]
+  },
+  "/_next/a-wonderful-performance-15138ec59dc7.jpg": {
+    "width": 1920,
+    "height": 1277,
+    "sourceBytes": 362340,
+    "variants": [
+      {
+        "src": "/photography/optimized/3d9233f8051d37ce-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 44232
+      },
+      {
+        "src": "/photography/optimized/3d9233f8051d37ce-800.webp",
+        "width": 800,
+        "height": 532,
+        "bytes": 112318
+      }
+    ]
+  },
+  "/_next/the-windmill-looks-very-comfortable-32fd406ecebd.jpg": {
+    "width": 1920,
+    "height": 2887,
+    "sourceBytes": 240343,
+    "variants": [
+      {
+        "src": "/photography/optimized/35a70d4712de2eaf-480.webp",
+        "width": 480,
+        "height": 722,
+        "bytes": 36180
+      },
+      {
+        "src": "/photography/optimized/35a70d4712de2eaf-800.webp",
+        "width": 800,
+        "height": 1203,
+        "bytes": 73012
+      }
+    ]
+  },
+  "/_next/quiet-lake-b1190d685e9d.jpg": {
+    "width": 1920,
+    "height": 1277,
+    "sourceBytes": 324083,
+    "variants": [
+      {
+        "src": "/photography/optimized/433a6de5f206bc87-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 33786
+      },
+      {
+        "src": "/photography/optimized/433a6de5f206bc87-800.webp",
+        "width": 800,
+        "height": 532,
+        "bytes": 84266
+      }
+    ]
+  },
+  "/_next/paddleboarding-might-be-the-best-water-sport-1e464873d815.jpg": {
+    "width": 1920,
+    "height": 2879,
+    "sourceBytes": 494421,
+    "variants": [
+      {
+        "src": "/photography/optimized/683b3d545410752d-480.webp",
+        "width": 480,
+        "height": 720,
+        "bytes": 75688
+      },
+      {
+        "src": "/photography/optimized/683b3d545410752d-800.webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 168722
+      }
+    ]
+  },
+  "/_next/let-s-go-hiking-together-5bd9278f140e.jpg": {
+    "width": 1920,
+    "height": 2879,
+    "sourceBytes": 744290,
+    "variants": [
+      {
+        "src": "/photography/optimized/8e4c5ad3ca22ecd9-480.webp",
+        "width": 480,
+        "height": 720,
+        "bytes": 113334
+      },
+      {
+        "src": "/photography/optimized/8e4c5ad3ca22ecd9-800.webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 267410
+      }
+    ]
+  },
+  "/_next/south-of-the-north-f4f83094dedb.jpg": {
+    "width": 1920,
+    "height": 2879,
+    "sourceBytes": 458304,
+    "variants": [
+      {
+        "src": "/photography/optimized/1b05f34042dc234b-480.webp",
+        "width": 480,
+        "height": 720,
+        "bytes": 47044
+      },
+      {
+        "src": "/photography/optimized/1b05f34042dc234b-800.webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 114486
+      }
+    ]
+  },
+  "/_next/film-camera-and-snowy-mountains-e60e86109ccc.jpg": {
+    "width": 1920,
+    "height": 1281,
+    "sourceBytes": 146216,
+    "variants": [
+      {
+        "src": "/photography/optimized/c016ce9cb8b6162c-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 18828
+      },
+      {
+        "src": "/photography/optimized/c016ce9cb8b6162c-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 37582
+      }
+    ]
+  },
+  "/_next/lake-louise-from-the-top-of-the-mountain-a6d6228f7216.jpg": {
+    "width": 1281,
+    "height": 1920,
+    "sourceBytes": 266127,
+    "variants": [
+      {
+        "src": "/photography/optimized/bba609d851b0f6d0-480.webp",
+        "width": 480,
+        "height": 719,
+        "bytes": 56066
+      },
+      {
+        "src": "/photography/optimized/bba609d851b0f6d0-800.webp",
+        "width": 800,
+        "height": 1199,
+        "bytes": 133972
+      }
+    ]
+  },
+  "/_next/winter-lake-6c5fac1b5f1a.jpg": {
+    "width": 1080,
+    "height": 1619,
+    "sourceBytes": 215584,
+    "variants": [
+      {
+        "src": "/photography/optimized/5bacbeddbceb4fe9-480.webp",
+        "width": 480,
+        "height": 720,
+        "bytes": 63884
+      },
+      {
+        "src": "/photography/optimized/5bacbeddbceb4fe9-800.webp",
+        "width": 800,
+        "height": 1199,
+        "bytes": 150690
+      }
+    ]
+  },
+  "/_next/mountain-peaks-through-the-trees-48e9b72d5a4a.jpg": {
+    "width": 854,
+    "height": 1280,
+    "sourceBytes": 101668,
+    "variants": [
+      {
+        "src": "/photography/optimized/6c141d4c9fe5ebf6-480.webp",
+        "width": 480,
+        "height": 719,
+        "bytes": 42540
+      },
+      {
+        "src": "/photography/optimized/6c141d4c9fe5ebf6-800.webp",
+        "width": 800,
+        "height": 1199,
+        "bytes": 86732
+      }
+    ]
+  },
+  "/_next/beautiful-lake-c2a9f5251cd9.jpg": {
+    "width": 1280,
+    "height": 854,
+    "sourceBytes": 118140,
+    "variants": [
+      {
+        "src": "/photography/optimized/ebab44a0e098ad8a-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 23478
+      },
+      {
+        "src": "/photography/optimized/ebab44a0e098ad8a-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 59958
+      }
+    ]
+  },
+  "/_next/kamakura-daibutsu-9a4b6b6e7bc2.jpg": {
+    "width": 1920,
+    "height": 2887,
+    "sourceBytes": 551290,
+    "variants": [
+      {
+        "src": "/photography/optimized/2b54dfbf4e846978-480.webp",
+        "width": 480,
+        "height": 722,
+        "bytes": 68156
+      },
+      {
+        "src": "/photography/optimized/2b54dfbf4e846978-800.webp",
+        "width": 800,
+        "height": 1203,
+        "bytes": 145906
+      }
+    ]
+  },
+  "/_next/in-the-evening-in-yokohama-take-a-boat-out-to-sea-91d0627c3083.jpg": {
+    "width": 1920,
+    "height": 1281,
+    "sourceBytes": 217471,
+    "variants": [
+      {
+        "src": "/photography/optimized/bb1112840ccabc1f-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 25086
+      },
+      {
+        "src": "/photography/optimized/bb1112840ccabc1f-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 56728
+      }
+    ]
+  },
+  "/_next/under-mount-fuji-at-dusk-6f9d0a19ab02.jpg": {
+    "width": 1920,
+    "height": 2879,
+    "sourceBytes": 300594,
+    "variants": [
+      {
+        "src": "/photography/optimized/74755d6fcb515918-480.webp",
+        "width": 480,
+        "height": 720,
+        "bytes": 32128
+      },
+      {
+        "src": "/photography/optimized/74755d6fcb515918-800.webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 70844
+      }
+    ]
+  },
+  "/_next/the-man-who-just-came-back-from-the-market-e052ce6e337a.jpg": {
+    "width": 1920,
+    "height": 1277,
+    "sourceBytes": 131443,
+    "variants": [
+      {
+        "src": "/photography/optimized/307af37c6dedac91-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 17042
+      },
+      {
+        "src": "/photography/optimized/307af37c6dedac91-800.webp",
+        "width": 800,
+        "height": 532,
+        "bytes": 34008
+      }
+    ]
+  },
+  "/_next/visitors-at-the-exhibition-484a6532533e.jpg": {
+    "width": 1080,
+    "height": 1624,
+    "sourceBytes": 157338,
+    "variants": [
+      {
+        "src": "/photography/optimized/e4d157a051f3657f-480.webp",
+        "width": 480,
+        "height": 722,
+        "bytes": 35044
+      },
+      {
+        "src": "/photography/optimized/e4d157a051f3657f-800.webp",
+        "width": 800,
+        "height": 1203,
+        "bytes": 92792
+      }
+    ]
+  },
+  "/_next/the-child-pushing-the-baby-stroller-753a9093f955.jpg": {
+    "width": 1920,
+    "height": 1277,
+    "sourceBytes": 209721,
+    "variants": [
+      {
+        "src": "/photography/optimized/a9649f1dc6a99f8f-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 26834
+      },
+      {
+        "src": "/photography/optimized/a9649f1dc6a99f8f-800.webp",
+        "width": 800,
+        "height": 532,
+        "bytes": 53688
+      }
+    ]
+  },
+  "/_next/several-girls-are-helping-blind-people-d90caa512786.jpg": {
+    "width": 1920,
+    "height": 1277,
+    "sourceBytes": 277979,
+    "variants": [
+      {
+        "src": "/photography/optimized/83fefe6e4a34b38e-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 33144
+      },
+      {
+        "src": "/photography/optimized/83fefe6e4a34b38e-800.webp",
+        "width": 800,
+        "height": 532,
+        "bytes": 72362
+      }
+    ]
+  },
+  "/_next/the-moving-small-train-eebdfd079d21.jpg": {
+    "width": 1920,
+    "height": 1277,
+    "sourceBytes": 207791,
+    "variants": [
+      {
+        "src": "/photography/optimized/9e64835534b169d8-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 21598
+      },
+      {
+        "src": "/photography/optimized/9e64835534b169d8-800.webp",
+        "width": 800,
+        "height": 532,
+        "bytes": 51198
+      }
+    ]
+  },
+  "/_next/chaka-yan-lake-7e1865538ba2.jpg": {
+    "width": 1277,
+    "height": 1920,
+    "sourceBytes": 147755,
+    "variants": [
+      {
+        "src": "/photography/optimized/73eab1ca0500f230-480.webp",
+        "width": 480,
+        "height": 722,
+        "bytes": 29388
+      },
+      {
+        "src": "/photography/optimized/73eab1ca0500f230-800.webp",
+        "width": 800,
+        "height": 1203,
+        "bytes": 64472
+      }
+    ]
+  },
+  "/_next/a-plant-hairpin-ac30bdc75e86.jpg": {
+    "width": 1920,
+    "height": 1280,
+    "sourceBytes": 152062,
+    "variants": [
+      {
+        "src": "/photography/optimized/5f58e8733cf0db39-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 15502
+      },
+      {
+        "src": "/photography/optimized/5f58e8733cf0db39-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 34444
+      }
+    ]
+  },
+  "/_next/cute-little-bird-362a3ee0dfd1.jpg": {
+    "width": 1281,
+    "height": 1920,
+    "sourceBytes": 98982,
+    "variants": [
+      {
+        "src": "/photography/optimized/66fb5d124a03f48e-480.webp",
+        "width": 480,
+        "height": 719,
+        "bytes": 19238
+      },
+      {
+        "src": "/photography/optimized/66fb5d124a03f48e-800.webp",
+        "width": 800,
+        "height": 1199,
+        "bytes": 41922
+      }
+    ]
+  },
+  "/_next/the-child-who-plays-games-29bf4df41a92.jpg": {
+    "width": 1920,
+    "height": 1277,
+    "sourceBytes": 236510,
+    "variants": [
+      {
+        "src": "/photography/optimized/f58e766af10d2f24-480.webp",
+        "width": 480,
+        "height": 319,
+        "bytes": 31410
+      },
+      {
+        "src": "/photography/optimized/f58e766af10d2f24-800.webp",
+        "width": 800,
+        "height": 532,
+        "bytes": 65146
+      }
+    ]
+  }
+}

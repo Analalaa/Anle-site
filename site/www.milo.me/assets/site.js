@@ -28,17 +28,17 @@
   const fullImage = dialog.querySelector('img');
   const count = dialog.querySelector('.lightbox-count');
   const caption = dialog.querySelector('.lightbox-caption');
-  const original = dialog.querySelector('.original-photo');
   let index = 0;
   let opener;
   function showPhoto(next) {
     index = (next + photos.length) % photos.length;
     const image = photos[index].querySelector('img');
-    fullImage.src = image.src;
+    fullImage.width = image.width;
+    fullImage.height = image.height;
+    fullImage.src = photos[index].dataset.original || image.src;
     fullImage.alt = image.alt;
     count.textContent = `${index + 1} / ${photos.length}`;
     caption.textContent = photos[index].dataset.caption || '';
-    original.href = image.src;
   }
   photos.forEach((button, i) => button.addEventListener('click', () => {
     opener = button;

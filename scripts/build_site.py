@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render the bilingual static site from content/, using one shared visual system."""
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -9,6 +10,22 @@ from project_art import artwork
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / 'site/www.milo.me'
 E = escape
+PHOTO_ASSETS = json.loads((ROOT / 'content/photo-assets.json').read_text())
+# Match the two-column mobile and three-column desktop gallery in site.css.
+PHOTO_SIZES = '(max-width: 540px) calc((100vw - 53px) / 2), (max-width: 760px) calc((100vw - 60px) / 2), (max-width: 1008px) calc((100vw - 80px) / 3), 310px'
+STRIP_SIZES = '(max-width: 540px) calc((100vw - 58px) / 3), (max-width: 768px) calc((100vw - 68px) / 3), 234px'
+SCRIPT_VERSION = hashlib.sha256((SITE / 'assets/site.js').read_bytes()).hexdigest()[:12]
+
+
+def photo_image(photo, alt, sizes=PHOTO_SIZES, eager=False):
+    asset = PHOTO_ASSETS[photo['src']]
+    variants = asset['variants']
+    srcset = ', '.join(f'{v["src"]} {v["width"]}w' for v in variants)
+    loading = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
+    return (f'<img src="{variants[0]["src"]}" srcset="{srcset}" sizes="{sizes}" '
+            f'width="{asset["width"]}" height="{asset["height"]}" '
+            f'alt="{E(alt,quote=True)}" {loading} decoding="async">')
+
 ICONS = {
     'prompts': '<path d="M6 4h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6l-5 4v-4H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m8 8 3 2-3 2m6 1h3"/>',
     'date': '<rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4m8-4v4M4 10h16m-12 5 3 3 5-5"/>',
@@ -58,7 +75,7 @@ def shell(lang, path, title, section, body, description='', extra_class=''):
 <link rel="alternate" hreflang="en" href="{url('en',path)}"><link rel="alternate" hreflang="zh" href="{url('zh',path)}">
 <link rel="icon" href="/favicon.ico"><link rel="alternate" type="application/rss+xml" title="Milo An — RSS" href="/rss.xml">
 <script>try{{var t=localStorage.getItem('theme');if(t==='dark'||((!t||t==='system')&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}}catch(e){{}}</script>
-<link rel="stylesheet" href="/assets/site.css">{'<link rel="stylesheet" href="/assets/project-gallery.css">' if section=='projects' else ''}<script src="/assets/site.js" defer></script>
+<link rel="stylesheet" href="/assets/site.css">{'<link rel="stylesheet" href="/assets/project-gallery.css">' if section=='projects' else ''}<script src="/assets/site.js?v={SCRIPT_VERSION}" defer></script>
 </head>
 <body>
 <a class="skip" href="#main-content">{'跳到正文' if zh else 'Skip to content'}</a>
@@ -141,7 +158,7 @@ def main():
         body += f'<section class="section"><div class="section-heading"><h2>{"最近的文字" if zh else "Recent writing"}</h2><a href="{url(lang,"blogs.html")}">{"全部文章" if zh else "All posts"} →</a></div>{post_list(posts[:3],lang,full_date=True)}</section>'
         body += f'<section class="section"><div class="section-heading"><h2>{"一些看见的瞬间" if zh else "A few moments, kept"}</h2><a href="{url(lang,"photography.html")}">{"摄影" if zh else "Photography"} →</a></div><div class="photo-strip">'
         for photo in photos['main'][:3]:
-            body += f'<a href="{url(lang,"photography.html")}"><img src="{photo["src"]}" width="{photo["width"]}" height="{photo["height"]}" alt="{E(photo["alt"],quote=True)}" loading="lazy"></a>'
+            body += f'<a href="{url(lang,"photography.html")}">' + photo_image(photo, photo['alt'], STRIP_SIZES) + '</a>'
         body += '</div></section>' + contact(lang)
         page('index.html','首页' if zh else 'Home','home',body,'安乐的个人角落：写作、摄影和一些小作品。' if zh else 'A personal corner for writing, photography, and small projects by Milo An.')
         # About retains all existing personal writing.
@@ -208,10 +225,10 @@ def main():
             for i,photo in enumerate(photos[key]):
                 caption = photo['alt'] if archive else ''
                 alt = photo['alt'] if archive else (f'安乐的摄影作品 {i+1}' if zh else f'Photograph by Milo An, {i+1}')
-                body += f'<figure><button type="button" class="photo-open" data-caption="{E(caption,quote=True)}" aria-label="{E(("查看照片：" if zh else "View photo: ")+alt,quote=True)}"><img src="{photo["src"]}" alt="{E(alt,quote=True)}" width="{photo["width"]}" height="{photo["height"]}" loading="lazy"></button>' + (f'<figcaption>{E(caption)}</figcaption>' if caption else '') + '</figure>'
+                body += f'<figure><button type="button" class="photo-open" data-original="{photo["src"]}" data-caption="{E(caption,quote=True)}" aria-label="{E(("查看照片：" if zh else "View photo: ")+alt,quote=True)}">' + photo_image(photo, alt, eager=i == 0) + '</button>' + (f'<figcaption>{E(caption)}</figcaption>' if caption else '') + '</figure>'
             body += '</div><nav class="photo-pagination">'
             body += f'<span>{len(photos[key])} {"个瞬间" if zh else "moments"}</span><a href="{url(lang,"photography.html" if archive else "photography/page/2.html")}">' + (('← 最近的照片' if zh else '← Recent photographs') if archive else ('更早的片段 →' if zh else 'Earlier frames →')) + '</a></nav>'
-            body += f'<dialog class="lightbox" aria-label="{"照片预览" if zh else "Photo viewer"}"><div class="lightbox-toolbar"><span class="lightbox-count" aria-live="polite"></span><button type="button" data-close aria-label="{"关闭" if zh else "Close"}" autofocus>{icon("close")}</button></div><img alt=""><div class="lightbox-bottom"><button type="button" data-prev aria-label="{"上一张" if zh else "Previous photo"}">{icon("left")}</button><p class="lightbox-caption"></p><a class="original-photo" target="_blank" rel="noopener noreferrer">{"查看原图" if zh else "Original"} ↗</a><button type="button" data-next aria-label="{"下一张" if zh else "Next photo"}">{icon("right")}</button></div></dialog>'
+            body += f'<dialog class="lightbox" aria-label="{"照片预览" if zh else "Photo viewer"}"><div class="lightbox-toolbar"><span class="lightbox-count" aria-live="polite"></span><button type="button" data-close aria-label="{"关闭" if zh else "Close"}" autofocus>{icon("close")}</button></div><img alt="" decoding="async"><div class="lightbox-bottom"><button type="button" data-prev aria-label="{"上一张" if zh else "Previous photo"}">{icon("left")}</button><p class="lightbox-caption"></p><button type="button" data-next aria-label="{"下一张" if zh else "Next photo"}">{icon("right")}</button></div></dialog>'
             page(path,title,'photography',body,intro,'photos-page')
         for folder in ['blogs','photography']: redirect(url(lang,folder+'/index.html'),url(lang,folder+'.html'),lang)
     print('Generated bilingual pages with shared navigation, typography, and themes.')

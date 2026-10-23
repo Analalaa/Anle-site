@@ -27,6 +27,7 @@ jobs:
         env:
           PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
         run: |
+          python3 scripts/test_photo_export.py
           python3 scripts/build_site.py
           python3 scripts/export_site.py --output _site --base-url "$PAGES_BASE_URL"
       - uses: actions/upload-pages-artifact@v4

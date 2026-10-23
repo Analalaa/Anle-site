@@ -26,8 +26,14 @@ def export(output, base_url):
         source = path.read_text(encoding='utf-8')
         # Generated pages use quoted root-relative href/src attributes. Relative,
         # external, protocol-relative, mailto, and in-page links stay unchanged.
-        source = re.sub(r'''(\b(?:href|src|poster|action)\s*=\s*["'])/(?!/)''',
+        source = re.sub(r'''(\b(?:href|src|poster|action|data-original)\s*=\s*["'])/(?!/)''',
                         lambda m: m[1] + prefix + '/', source, flags=re.I)
+        # Each srcset candidate has its own URL; preserve width descriptors.
+        def prefix_srcset(match):
+            candidates = re.sub(r'(^|,\s*)/(?!/)',
+                                lambda m: m[1] + prefix + '/', match[2])
+            return match[1] + candidates + match[3]
+        source = re.sub(r'(\bsrcset=")(.*?)(")', prefix_srcset, source, flags=re.I)
         source = re.sub(r'''(content=["']0;url=)/(?!/)''',
                         lambda m: m[1] + prefix + '/', source, flags=re.I)
         path.write_text(source, encoding='utf-8')
