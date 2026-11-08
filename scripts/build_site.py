@@ -15,6 +15,8 @@ PHOTO_ASSETS = json.loads((ROOT / 'content/photo-assets.json').read_text())
 PHOTO_SIZES = '(max-width: 540px) calc((100vw - 53px) / 2), (max-width: 760px) calc((100vw - 60px) / 2), (max-width: 1008px) calc((100vw - 80px) / 3), 310px'
 STRIP_SIZES = '(max-width: 540px) calc((100vw - 58px) / 3), (max-width: 768px) calc((100vw - 68px) / 3), 234px'
 SCRIPT_VERSION = hashlib.sha256((SITE / 'assets/site.js').read_bytes()).hexdigest()[:12]
+STYLE_VERSION = hashlib.sha256((SITE / 'assets/site.css').read_bytes()).hexdigest()[:12]
+GALLERY_VERSION = hashlib.sha256((SITE / 'assets/project-gallery.css').read_bytes()).hexdigest()[:12]
 
 
 def photo_image(photo, alt, sizes=PHOTO_SIZES, eager=False):
@@ -27,6 +29,7 @@ def photo_image(photo, alt, sizes=PHOTO_SIZES, eager=False):
             f'alt="{E(alt,quote=True)}" {loading} decoding="async">')
 
 ICONS = {
+    'gathering': '<path d="M9 16 5 4l4 1 3-3 3 3 4-1-4 12Z"/><path d="m9 5 2 11m4-11-2 11M9 16h6v2a3 3 0 0 1-6 0Z"/>',
     'prompts': '<path d="M6 4h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6l-5 4v-4H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m8 8 3 2-3 2m6 1h3"/>',
     'date': '<rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4m8-4v4M4 10h16m-12 5 3 3 5-5"/>',
     'music': '<path d="M3 10v4m4-7v10m5-14v18m5-14v10m4-7v4"/>',
@@ -62,7 +65,7 @@ def contact(lang):
 def shell(lang, path, title, section, body, description='', extra_class=''):
     zh = lang == 'zh'
     page_title = title + (' · 安乐的个人网站' if zh else ' · Milo An')
-    navigation = [('index.html', '首页' if zh else 'Home', 'home'), ('projects.html', '小作品' if zh else 'Projects', 'projects'), ('photography.html', '摄影' if zh else 'Photography', 'photography'), ('blogs.html', '博客' if zh else 'Blog', 'blogs'), ('about.html', '关于' if zh else 'About', 'about')]
+    navigation = [('index.html', '首页' if zh else 'Home', 'home'), ('projects.html', '项目' if zh else 'Projects', 'projects'), ('photography.html', '摄影' if zh else 'Photography', 'photography'), ('blogs.html', '博客' if zh else 'Blog', 'blogs'), ('about.html', '关于' if zh else 'About', 'about')]
     nav = ''.join(f'<a href="{url(lang,p)}"' + (' aria-current="page"' if current == section else '') + f'>{label}</a>' for p, label, current in navigation)
     languages = ' / '.join(f'<a href="{url(l,path)}" lang="{l}" hreflang="{l}"' + (' aria-current="page"' if lang == l else '') + f'>{l.upper()}</a>' for l in ['en','zh'])
     return f'''<!doctype html>
@@ -75,7 +78,7 @@ def shell(lang, path, title, section, body, description='', extra_class=''):
 <link rel="alternate" hreflang="en" href="{url('en',path)}"><link rel="alternate" hreflang="zh" href="{url('zh',path)}">
 <link rel="icon" href="/favicon.ico"><link rel="alternate" type="application/rss+xml" title="Milo An — RSS" href="/rss.xml">
 <script>try{{var t=localStorage.getItem('theme');if(t==='dark'||((!t||t==='system')&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}}catch(e){{}}</script>
-<link rel="stylesheet" href="/assets/site.css">{'<link rel="stylesheet" href="/assets/project-gallery.css">' if section=='projects' else ''}<script src="/assets/site.js?v={SCRIPT_VERSION}" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v={STYLE_VERSION}">{'<link rel="stylesheet" href="/assets/project-gallery.css?v='+GALLERY_VERSION+'">' if section=='projects' else ''}<script src="/assets/site.js?v={SCRIPT_VERSION}" defer></script>
 </head>
 <body>
 <a class="skip" href="#main-content">{'跳到正文' if zh else 'Skip to content'}</a>
@@ -143,6 +146,8 @@ def installation(project, lang):
 def main():
     data = {name: json.loads((ROOT/'content'/f'{name}.json').read_text()) for name in ['site','projects','posts','photos']}
     projects, posts, photos = data['projects'], sorted(data['posts'], key=lambda p:p['date'], reverse=True), data['photos']
+    event_series = [p for p in projects if p.get('kind') == 'event-series']
+    products = [p for p in projects if p.get('kind') != 'event-series']
     for lang in ['en','zh']:
         zh = lang == 'zh'
         def page(path, title, section, body, desc='', extra=''):
@@ -150,29 +155,42 @@ def main():
         # Home: a short introduction; the complete original biography lives on About.
         body = f'<header class="home-heading"><div><h1>{"<span>你好，</span><span>我是安乐。</span>" if zh else "Hey, I’m Milo."}</h1><p class="name-note">{"Milo An · 创作与生活的记录" if zh else "Anle / 安乐 · Making things & living life"}</p></div><img class="avatar" src="{data["site"][lang]["portrait"]}" alt="Milo An" width="68" height="68"></header>'
         if zh:
-            body += '<div class="prose"><p>喜欢奇思妙想，也喜欢把它们慢慢做出来。<br>我写作、拍照，做一些让生活更有意思的小工具。</p><p>最近，把散落在日常里的想法，做成了这些<a href="/zh/projects.html">小作品</a>：</p></div>'
+            body += '<div class="prose"><p>喜欢奇思妙想，也喜欢把它们慢慢做出来。<br>我写作、拍照，也把一些想法慢慢做成项目。</p><p>从生活里的需要出发，做了这些<a href="/zh/projects.html#products">小产品</a>：</p></div>'
         else:
-            body += '<div class="prose"><p>I’m drawn to curious ideas, and I like making them real.<br>I write, take photographs, and build little tools for everyday life.</p><p>Some ideas have grown into <a href="/projects.html">small projects</a>:</p></div>'
-        body += '<div class="project-chips">' + ''.join(f'<a class="project-chip" href="{url(lang,"projects/"+p["slug"]+".html")}">{icon(p["visual"])}{E(p["name"])}</a>' for p in projects) + '</div>'
+            body += '<div class="prose"><p>I’m drawn to curious ideas, and I like making them real.<br>I write, take photographs, and turn ideas into projects.</p><p>Some everyday needs have grown into <a href="/projects.html#products">small products</a>:</p></div>'
+        body += '<div class="project-chips">' + ''.join(f'<a class="project-chip" href="{url(lang,"projects/"+p["slug"]+".html")}">{icon(p["visual"])}{E(p[lang].get("name",p["name"]))}</a>' for p in products) + '</div>'
+        for p in event_series:
+            series_link = f'<a href="{url(lang,"projects/"+p["slug"]+".html")}">{E(p[lang].get("name",p["name"]))}</a>'
+            body += '<div class="prose"><p>' + (f'我也发起了活动系列：{series_link}。' if zh else f'I also founded the event series {series_link}.') + '</p></div>'
         body += '<div class="prose"><p>' + ('创作之外，喜欢运动、旅行、音乐，和人与人之间真诚的交谈。相信很多东西是慢慢生长出来的，也希望一直保留玩儿的心态。' if zh else 'Away from the screen, I love sports, travel, music, and honest conversations. I believe good things take time to grow — and that a sense of play is worth keeping.') + f' <a href="{url(lang,"about.html")}">{"更多关于我" if zh else "More about me"} ↗</a></p></div>'
         body += f'<section class="section"><div class="section-heading"><h2>{"最近的文字" if zh else "Recent writing"}</h2><a href="{url(lang,"blogs.html")}">{"全部文章" if zh else "All posts"} →</a></div>{post_list(posts[:3],lang,full_date=True)}</section>'
         body += f'<section class="section"><div class="section-heading"><h2>{"一些看见的瞬间" if zh else "A few moments, kept"}</h2><a href="{url(lang,"photography.html")}">{"摄影" if zh else "Photography"} →</a></div><div class="photo-strip">'
         for photo in photos['main'][:3]:
             body += f'<a href="{url(lang,"photography.html")}">' + photo_image(photo, photo['alt'], STRIP_SIZES) + '</a>'
         body += '</div></section>' + contact(lang)
-        page('index.html','首页' if zh else 'Home','home',body,'安乐的个人角落：写作、摄影和一些小作品。' if zh else 'A personal corner for writing, photography, and small projects by Milo An.')
+        page('index.html','首页' if zh else 'Home','home',body,'安乐的个人角落：写作、摄影、小产品与发起的活动。' if zh else 'A personal corner for writing, photography, small products, and events by Milo An.')
         # About retains all existing personal writing.
         body = heading('关于我' if zh else 'About me','保持好奇，慢慢生长。' if zh else 'Stay curious. Give things time to grow.')
         bio = '\n'.join(data['site'][lang]['original_bio']).replace('我同样喜欢文学与影视作品，也喜欢文学与影视作品。','我同样喜欢文学与影视作品。')
         body += '<div class="prose">' + bio + '</div>' + contact(lang)
         page('about.html','关于我' if zh else 'About me','about',body,'写作、摄影、运动、音乐，以及我想慢慢构建的生活。' if zh else 'Writing, photography, sport, music, and a life I am slowly making my own.')
-        # Expressive project covers inside the shared site navigation and typography.
-        intro = '从自己的需要和兴趣出发，把好奇心做成小东西。' if zh else 'Small things made from personal needs, passing thoughts, and a little curiosity.'
-        body = heading('小作品' if zh else 'Projects',intro,"ANLE’S PLAYGROUND") + '<div class="collection-heading"><span>' + ('作品架' if zh else 'On the shelf') + f'</span><span>{len(projects):02d} / ' + ('持续生长中' if zh else 'An ongoing collection') + '</span></div><div class="work-grid">'
-        for i,p in enumerate(projects,1):
+        # Event series and products share one project index, with distinct formats.
+        intro = '做一些小产品，也发起一些相聚。把想法带进生活里。' if zh else 'Small products and shared experiences. Ideas brought into everyday life.'
+        body = heading('项目' if zh else 'Projects',intro,"ANLE’S PLAYGROUND")
+        if event_series:
+            body += '<section class="project-collection" id="event-series" aria-labelledby="event-series-title"><div class="collection-heading"><h2 id="event-series-title">' + ('活动系列' if zh else 'Event series') + f'</h2><span>{len(event_series):02d}</span></div><div class="event-collection">'
+            for p in event_series:
+                d = p[lang]
+                name = d.get('name',p['name'])
+                detail_url = url(lang,'projects/'+p['slug']+'.html')
+                body += f'<article class="event-card"><a class="work-cover" href="{detail_url}" aria-label="{E(("了解 " if zh else "About ")+name,quote=True)}">{artwork(p,lang)}</a><div class="event-card-copy"><p class="event-role">{E(d.get("role",""))}</p><h3><a href="{detail_url}">{E(name)}</a></h3><p class="work-tagline">{E(d["tagline"])}</p><p class="work-description">{E(d["description"])}</p><a class="work-more" href="{detail_url}">{"了解这个系列" if zh else "Explore the series"} →</a></div></article>'
+            body += '</div></section>'
+        body += '<section class="project-collection" id="products" aria-labelledby="products-title"><div class="collection-heading"><h2 id="products-title">' + ('小产品' if zh else 'Small products') + f'</h2><span>{len(products):02d}</span></div><div class="work-grid">'
+        for i,p in enumerate(products,1):
             d = p[lang]
+            name = d.get('name',p['name'])
             detail_url = url(lang,'projects/'+p['slug']+'.html')
-            body += f'<article class="work-card"><a class="work-cover" href="{detail_url}" aria-label="{E(("了解 " if zh else "About ")+p["name"],quote=True)}">{artwork(p,lang)}</a><div class="work-meta"><span>{E(d["category"])}</span><span>{i:02d}</span></div><h2><a href="{detail_url}">{E(p["name"])}</a></h2><p class="work-tagline">{E(d["tagline"])}</p><p class="work-description">{E(d["description"])}</p><div class="work-actions">'
+            body += f'<article class="work-card"><a class="work-cover" href="{detail_url}" aria-label="{E(("了解 " if zh else "About ")+name,quote=True)}">{artwork(p,lang)}</a><div class="work-meta"><span>{E(d["category"])}</span><span>{i:02d}</span></div><h3><a href="{detail_url}">{E(name)}</a></h3><p class="work-tagline">{E(d["tagline"])}</p><p class="work-description">{E(d["description"])}</p><div class="work-actions">'
             if p.get('url'):
                 body += external(p['url'],E(d.get('linkLabel','在线体验' if zh else 'Try it online'))+' ↗','work-primary')
             elif p.get('download'):
@@ -180,27 +198,57 @@ def main():
             else:
                 body += '<span class="work-status">' + E(d.get('availabilityLabel', '在线体验准备中' if zh else 'Online experience coming soon')) + '</span>'
             body += f'<a class="work-more" href="{detail_url}">{"了解作品" if zh else "About this project"} →</a></div></article>'
-        body += '</div><p class="quiet-note">' + ('还在继续做，也在继续玩。' if zh else 'Still making. Still playing.') + '</p>'
-        page('projects.html','小作品' if zh else 'Projects','projects',body,intro,'works-page')
+        body += '</div></section><p class="quiet-note">' + ('还在继续做，也在继续玩。' if zh else 'Still making. Still playing.') + '</p>'
+        page('projects.html','项目' if zh else 'Projects','projects',body,intro,'works-page')
         for i,p in enumerate(projects):
             d = p[lang]
-            body = f'<a class="back-link" href="{url(lang,"projects.html")}">← {"所有小作品" if zh else "All projects"}</a>'
-            body += heading(p['name'], d['tagline'], d['category'])
-            if p.get('url'): body += '<div class="detail-launch">' + external(p['url'],E(d.get('linkLabel','在线体验' if zh else 'Try it online'))+' ↗','work-primary') + '</div>'
-            elif p.get('download'): body += '<div class="detail-launch"><a class="work-primary" href="#use">' + E(d['linkLabel']) + ' ↓</a></div>'
-            else: body += '<div class="detail-launch"><span class="work-status">' + E(d.get('availabilityLabel', '在线体验准备中' if zh else 'Online experience coming soon')) + '</span></div>'
-            body += '<figure class="work-detail-art">' + artwork(p,lang) + '<figcaption>' + ('作品概念视觉' if zh else 'A visual interpretation of the project') + '</figcaption></figure>'
-            body += f'<div class="prose"><p>{E(d["intro"])}</p></div><ul class="feature-list">' + ''.join(f'<li><h2>{E(t)}</h2><p>{E(v)}</p></li>' for t,v in d['features']) + '</ul>'
-            actions = []
-            if p.get('url'): actions.append(external(p['url'],E(d.get('linkLabel','在线体验' if zh else 'Try it online'))+' ↗','work-primary'))
-            if p.get('source'): actions.append(external(p['source'],('查看源码' if zh else 'Source code')+' ↗','text-link'))
-            if actions: body += '<div class="actions">' + ''.join(actions) + '</div>'
-            body += f'<p class="quiet-note">{E(d["note"])}</p>'
-            if p.get('download'): body += installation(p,lang)
+            name = d.get('name',p['name'])
+            is_series = p.get('kind') == 'event-series'
+            body = f'<a class="back-link" href="{url(lang,"projects.html")}">← {"所有项目" if zh else "All projects"}</a>'
+            body += heading(name, d['tagline'], d.get('category','活动系列' if zh else 'Event series'))
+            if is_series:
+                if d.get('role'):
+                    body += f'<p class="series-role"><span>{"我的角色" if zh else "My role"}</span>{E(d["role"])}</p>'
+                cover_caption = d.get('coverCaption', '活动视觉' if zh else 'Event visual') if p.get('cover') else ('废弃羽毛球与球桶的概念插画' if zh else 'A conceptual illustration of used shuttlecocks and tubes')
+                body += '<figure class="work-detail-art series-detail-art">' + artwork(p,lang) + '<figcaption>' + E(cover_caption) + '</figcaption></figure>'
+            else:
+                if p.get('url'): body += '<div class="detail-launch">' + external(p['url'],E(d.get('linkLabel','在线体验' if zh else 'Try it online'))+' ↗','work-primary') + '</div>'
+                elif p.get('download'): body += '<div class="detail-launch"><a class="work-primary" href="#use">' + E(d['linkLabel']) + ' ↓</a></div>'
+                else: body += '<div class="detail-launch"><span class="work-status">' + E(d.get('availabilityLabel', '在线体验准备中' if zh else 'Online experience coming soon')) + '</span></div>'
+                body += '<figure class="work-detail-art">' + artwork(p,lang) + '<figcaption>' + ('作品概念视觉' if zh else 'A visual interpretation of the project') + '</figcaption></figure>'
+            body += f'<div class="prose"><p>{E(d["intro"])}</p></div>'
+            if d.get('features'):
+                body += '<ul class="feature-list">' + ''.join(f'<li><h2>{E(t)}</h2><p>{E(v)}</p></li>' for t,v in d['features']) + '</ul>'
+            if is_series:
+                if d.get('sessions'):
+                    body += '<section class="series-section" aria-labelledby="series-sessions-title"><h2 id="series-sessions-title">' + ('系列活动' if zh else 'In the series') + '</h2><ol class="series-sessions">'
+                    for session in d['sessions']:
+                        body += f'<li><p class="series-session-label">{E(session["label"])}</p><div><h3>{E(session["title"])}</h3><p>{E(session["text"])}</p>'
+                        if session.get('url'):
+                            body += external(session['url'], ('查看活动记录' if zh else 'View event page') + ' ↗', 'text-link series-session-link')
+                        body += '</div></li>'
+                    body += '</ol></section>'
+                if d.get('photos'):
+                    body += '<div class="series-photos">'
+                    for photo in d['photos']:
+                        body += f'<figure class="series-photo"><img src="{E(photo["src"],quote=True)}" alt="{E(photo["alt"],quote=True)}" loading="lazy" decoding="async">'
+                        if photo.get('caption'): body += f'<figcaption>{E(photo["caption"])}</figcaption>'
+                        body += '</figure>'
+                    body += '</div>'
+                if d.get('reflection'):
+                    reflection = d['reflection']
+                    body += f'<section class="series-reflection"><h2>{E(reflection["title"])}</h2><p>{E(reflection["text"])}</p></section>'
+            else:
+                actions = []
+                if p.get('url'): actions.append(external(p['url'],E(d.get('linkLabel','在线体验' if zh else 'Try it online'))+' ↗','work-primary'))
+                if p.get('source'): actions.append(external(p['source'],('查看源码' if zh else 'Source code')+' ↗','text-link'))
+                if actions: body += '<div class="actions">' + ''.join(actions) + '</div>'
+            if d.get('note'): body += f'<p class="quiet-note">{E(d["note"])}</p>'
+            if not is_series and p.get('download'): body += installation(p,lang)
             next_p = projects[(i+1)%len(projects)]
-            body += f'<nav class="next-project" aria-label="{"下一个作品" if zh else "Next project"}"><span>{"继续看看" if zh else "Keep exploring"}</span><a href="{url(lang,"projects/"+next_p["slug"]+".html")}">{E(next_p["name"])} →</a></nav>'
+            body += f'<nav class="next-project" aria-label="{"下一个项目" if zh else "Next project"}"><span>{"继续看看" if zh else "Keep exploring"}</span><a href="{url(lang,"projects/"+next_p["slug"]+".html")}">{E(next_p[lang].get("name",next_p["name"]))} →</a></nav>'
             path = 'projects/'+p['slug']+'.html'
-            page(path,p['name'],'projects',body,d['description'])
+            page(path,name,'projects',body,d['description'])
             for alias in p.get('aliases',[]): redirect(url(lang,'projects/'+alias+'.html'),url(lang,path),lang)
         # Blog index and original articles.
         body = heading('博客' if zh else 'Writing','把经历、念头和偶尔的诗，留在这里。' if zh else 'Notes from life, passing thoughts, and the occasional poem.')
