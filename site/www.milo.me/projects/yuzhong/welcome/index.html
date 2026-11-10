@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="羽毛球桶去了哪里？废弃羽毛球与球桶共创展 p5.js 动态介绍页。">
+  <title>羽毛球&桶去了哪里？ | 展览介绍</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Noto+Serif+SC:wght@500;700;900&amp;display=swap" rel="stylesheet">
+  <script src="p5-1.9.4.min.js"></script>
+  <style>
+    :root {
+      --paper: #efecd9;
+      --ink: #25261e;
+      --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+      --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      overflow-x: hidden;
+      background: var(--paper);
+    }
+
+    body {
+      color: var(--ink);
+      font-family: var(--font-serif);
+      line-height: 1.78;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.23;
+      background:
+        radial-gradient(circle at 20% 16%, rgba(255, 255, 255, 0.5), transparent 22%),
+        radial-gradient(circle at 82% 78%, rgba(170, 161, 121, 0.18), transparent 30%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23paper)' opacity='.5'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+
+    #sketch {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    #sketch canvas {
+      display: block;
+    }
+
+    .music-control {
+      position: fixed;
+      left: 20px;
+      bottom: 34px;
+      z-index: 6;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      color: rgba(37, 38, 30, 0.82);
+      background: rgba(239, 236, 217, 0.72);
+      border: 1px solid rgba(37, 38, 30, 0.3);
+      border-radius: 50%;
+      box-shadow: 0 10px 28px rgba(37, 38, 30, 0.12);
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .music-control:hover,
+    .music-control:focus-visible {
+      color: var(--paper);
+      background: rgba(37, 38, 30, 0.84);
+      outline: 0;
+      transform: translateY(-1px);
+    }
+
+    .music-control[aria-pressed="true"] {
+      color: var(--paper);
+      background: rgba(8, 115, 216, 0.76);
+    }
+
+    .music-control[data-unavailable="true"] {
+      color: rgba(37, 38, 30, 0.36);
+      cursor: not-allowed;
+    }
+
+    .music-control span {
+      transform: translateY(-1px);
+      font-family: var(--font-mono);
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      padding: clamp(34px, 6vw, 76px) clamp(22px, 4vw, 56px);
+    }
+
+    .text {
+      width: min(100%, 760px);
+      margin-left: auto;
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 8em;
+      font-size: clamp(38px, 7vw, 86px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    h2 {
+      margin-top: 12px;
+      font-size: clamp(17px, 2vw, 23px);
+      font-weight: 700;
+      line-height: 1.36;
+      letter-spacing: 0.03em;
+    }
+
+    .welcome-back {
+      display: inline-block;
+      margin-bottom: 22px;
+      color: rgba(37, 38, 30, 0.68);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .welcome-back:hover, .welcome-back:focus-visible {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .statement {
+      display: grid;
+      gap: clamp(14px, 1.8vw, 22px);
+      max-width: 48rem;
+      margin-top: clamp(24px, 4vw, 46px);
+      color: rgba(37, 38, 30, 0.78);
+      font-size: clamp(15px, 1.45vw, 19px);
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    @media (max-width: 760px) {
+      #sketch {
+        opacity: 0.32;
+      }
+
+      .page {
+        align-items: center;
+        padding: 22px 24px 110px;
+      }
+
+      .text {
+        margin-left: 0;
+      }
+
+      h1 {
+        max-width: 6em;
+        font-size: clamp(34px, 11vw, 52px);
+      }
+
+      .statement {
+        gap: 14px;
+        margin-top: 26px;
+        font-size: 15px;
+        line-height: 1.68;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #sketch {
+        opacity: 0.42;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="sketch" aria-hidden="true"></div>
+  <audio id="ambient-audio" src="music-for-airports.m4a" loop preload="none"></audio>
+  <button class="music-control" type="button" aria-pressed="false" aria-label="播放背景音乐" title="播放/暂停背景音乐">
+    <span aria-hidden="true">♪</span>
+  </button>
+  <span class="sr-only" id="music-status" aria-live="polite"></span>
+
+  <main class="page" aria-labelledby="page-title">
+    <section class="text">
+      <a class="welcome-back" href="/zh/projects/yuzhong.html">← 项目回顾</a>
+      <h1 id="page-title">羽冢企划</h1>
+      <h2>废弃羽毛球与球&桶共创展</h2>
+
+      <article class="statement" aria-label="展览介绍">
+        <p>每一场羽毛球运动结束，球场的热闹散去，支离破碎的球与孤苦伶仃的桶静静留在场地。球桶原本用来收纳羽球，陪伴每一次训练与赛场对局，跟着无数次开桶、收桶的往复，亲历着赛场上的速度对抗、力量迸发与节奏变换。等到桶中羽球尽数损耗、彻底用完，这些球桶便失去了原本的用途，和破损报废的羽球一起，沦为普通的废弃品，被随手搁置、低价售卖，慢慢淡出人们的视线。</p>
+        <p>展览以废弃羽毛球和桶作为核心创作材料，聚焦运动结束后被人们忽视的遗留器物，重新审视它们从投入使用、不断消耗到最终淘汰的完整过程。共创者们通过自己的想象与理解发现属于自己的创作方式，让这些被淘汰的废弃器物摆脱废品的固有定义，变成可供观看、感知，也能引发观众思考与共鸣的艺术作品。</p>
+        <!-- <p>展览并非只是简单的废品改造与二次利用，更希望挖掘器物在失去原有作用后，全新的存在价值与生命形态。量产成型的桶身、空旷的内部空间、使用过程中留下的磨损痕迹，还有印刷标识留下的细微肌理，这些不被日常留意的细节，都成为了本次创作的基础。这些只为实用而生的制式容器，在不再服务于体育运动后，被重新赋予了独特的艺术气质与空间意义。。。。成为连接运动场景、物资消耗、器物消逝与艺术再造的载体，。</p> -->
+        <p>一只完成使命、退出球场的羽毛球桶，不再只是单纯的运动配件，也不止是一件废弃垃圾。经过艺术重构，它可以搭建空间、烘托光影、承载声响，唤醒人类对日常闲置物品的全新认知。展览以废弃球和桶为切入点，希望你能够重新思考：当一件物品的实用价值彻底消失，它所承载的使用痕迹、记忆，依旧可以通过艺术创作延续下去，完成自然且鲜活的新生。</p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const shuttles = [];
+    const paperSpecks = [];
+    const ambientAudio = document.querySelector("#ambient-audio");
+    const musicControl = document.querySelector(".music-control");
+    const musicStatus = document.querySelector("#music-status");
+    let wind = 0;
+    let emitter = { x: 0, y: 0, angle: 0 };
+
+    ambientAudio.volume = 0.36;
+
+    function setMusicState(isPlaying) {
+      musicControl.setAttribute("aria-pressed", String(isPlaying));
+      musicControl.setAttribute("aria-label", isPlaying ? "暂停背景音乐" : "播放背景音乐");
+      musicStatus.textContent = isPlaying ? "背景音乐播放中" : "背景音乐已暂停";
+    }
+
+    musicControl.addEventListener("click", async () => {
+      if (musicControl.dataset.unavailable === "true") return;
+
+      try {
+        if (ambientAudio.paused) {
+          await ambientAudio.play();
+          setMusicState(true);
+        } else {
+          ambientAudio.pause();
+          setMusicState(false);
+        }
+      } catch (error) {
+        musicControl.dataset.unavailable = "true";
+        musicControl.setAttribute("aria-label", "背景音乐文件不可用");
+        musicStatus.textContent = "背景音乐文件不可用";
+      }
+    });
+
+    ambientAudio.addEventListener("pause", () => setMusicState(false));
+    ambientAudio.addEventListener("play", () => setMusicState(true));
+    ambientAudio.addEventListener("error", () => {
+      musicControl.dataset.unavailable = "true";
+      musicControl.setAttribute("aria-label", "背景音乐文件不可用");
+      musicStatus.textContent = "背景音乐文件不可用";
+    });
+
+    function setup() {
+      const canvas = createCanvas(windowWidth, windowHeight);
+      canvas.parent("sketch");
+      pixelDensity(Math.min(window.devicePixelRatio || 1, 2));
+      noiseSeed(8);
+      updateEmitter();
+
+      for (let i = 0; i < 190; i += 1) {
+        paperSpecks.push({
+          x: random(width),
+          y: random(height),
+          s: random(0.4, 1.8),
+          a: random(18, 62)
+        });
+      }
+
+      const total = reducedMotion ? 12 : 34;
+      for (let i = 0; i < total; i += 1) {
+        shuttles.push(makeShuttle(emitter.x, emitter.y, true, -i * 18));
+      }
+    }
+
+    function draw() {
+      clear();
+      drawPaperMarks();
+      drawTubeEmitter();
+
+      if (!reducedMotion && frameCount % 28 === 0 && shuttles.length < 64) {
+        shuttles.push(makeShuttle(emitter.x, emitter.y, true));
+      }
+
+      for (const shuttle of shuttles) {
+        updateShuttle(shuttle);
+        drawShuttle(shuttle);
+      }
+    }
+
+    function updateEmitter() {
+      emitter = {
+        x: width * (width < 700 ? 0.18 : 0.15),
+        y: height * (width < 700 ? 0.2 : 0.23),
+        angle: width < 700 ? -0.34 : -0.24
+      };
+    }
+
+    function makeShuttle(x, y, launched = false, ageOffset = 0) {
+      const s = random(0.45, 0.9) * (width < 560 ? 0.72 : 1);
+      const travel = random();
+      const isFar = travel > 0.5;
+      const isNear = travel < 0.18;
+      const launchAngle = (isFar ? random(-0.58, 0.36) : isNear ? random(0.08, 0.78) : random(-0.3, 0.62)) + (width < 700 ? 0.16 : 0);
+      const speed = (isFar ? random(2.6, 4.45) : isNear ? random(0.72, 1.2) : random(1.35, 2.6)) * (reducedMotion ? 0.08 : 1);
+      return {
+        x: launched ? x + random(-8, 12) : x,
+        y: launched ? y + random(-16, 16) : y,
+        s,
+        vx: launched ? cos(launchAngle) * speed + random(isFar ? 0.55 : 0.1, isFar ? 1.45 : 0.48) : random(-0.16, 0.16),
+        vy: launched ? sin(launchAngle) * speed + random(isFar ? -0.36 : -0.12, isNear ? 0.34 : 0.18) : random(0.28, 0.85) * (reducedMotion ? 0.08 : 1),
+        gravity: random(isFar ? 0.0014 : 0.0034, isFar ? 0.0042 : 0.0078) * (reducedMotion ? 0.08 : 1),
+        rot: launched ? launchAngle + HALF_PI + random(-0.24, 0.24) : random(-0.8, 0.8),
+        spin: random(-0.006, 0.006),
+        sway: random(TAU),
+        age: ageOffset,
+        drift: isFar ? random(0.34, 0.72) : isNear ? random(0.08, 0.18) : random(0.2, 0.4),
+        blue: random(96, 190),
+        alpha: random(92, 168)
+      };
+    }
+
+    function updateShuttle(item) {
+      item.age += 1;
+      item.sway += 0.012;
+      item.x += item.vx + wind * (0.12 + item.s * 0.12) + sin(item.sway) * item.drift;
+      item.y += item.vy;
+      item.vy += item.gravity;
+      item.vx *= 0.997;
+      item.rot += item.spin + wind * 0.0009;
+
+      if (item.y > height + 100 || item.x < -120 || item.x > width + 120) {
+        Object.assign(item, makeShuttle(emitter.x, emitter.y, true));
+      }
+    }
+
+    function drawPaperMarks() {
+      noStroke();
+      for (const speck of paperSpecks) {
+        fill(49, 48, 36, speck.a);
+        circle(speck.x, speck.y, speck.s);
+      }
+    }
+
+    function drawTubeEmitter() {
+      const tubeLength = width < 700 ? 184 : 264;
+      const tubeWidth = width < 700 ? 60 : 82;
+      const backX = -tubeLength * 0.72;
+      const frontX = tubeLength * 0.28;
+
+      push();
+      translate(emitter.x, emitter.y);
+      rotate(emitter.angle);
+
+      noStroke();
+      fill(38, 39, 31, 18);
+      ellipse(-tubeLength * 0.16, tubeWidth * 0.7, tubeLength * 1.02, tubeWidth * 0.44);
+
+      stroke(38, 39, 31, 82);
+      strokeWeight(1.1);
+      fill(246, 243, 224, 128);
+      beginShape();
+      vertex(backX, -tubeWidth * 0.44);
+      bezierVertex(backX + tubeLength * 0.2, -tubeWidth * 0.56, frontX - tubeLength * 0.18, -tubeWidth * 0.54, frontX, -tubeWidth * 0.36);
+      bezierVertex(frontX + tubeWidth * 0.2, -tubeWidth * 0.16, frontX + tubeWidth * 0.2, tubeWidth * 0.16, frontX, tubeWidth * 0.36);
+      bezierVertex(frontX - tubeLength * 0.18, tubeWidth * 0.54, backX + tubeLength * 0.2, tubeWidth * 0.56, backX, tubeWidth * 0.44);
+      bezierVertex(backX - tubeWidth * 0.18, tubeWidth * 0.22, backX - tubeWidth * 0.18, -tubeWidth * 0.22, backX, -tubeWidth * 0.44);
+      endShape(CLOSE);
+
+      noFill();
+      stroke(255, 255, 246, 78);
+      strokeWeight(1.6);
+      bezier(backX + tubeLength * 0.08, -tubeWidth * 0.3, backX + tubeLength * 0.34, -tubeWidth * 0.42, frontX - tubeLength * 0.24, -tubeWidth * 0.38, frontX - tubeLength * 0.08, -tubeWidth * 0.22);
+
+      stroke(38, 39, 31, 24);
+      strokeWeight(0.9);
+      for (let i = 0; i < 8; i += 1) {
+        const x = map(i, 0, 7, backX + tubeLength * 0.08, frontX - tubeLength * 0.14);
+        line(x, -tubeWidth * 0.36, x + tubeWidth * 0.1, tubeWidth * 0.36);
+      }
+
+      noStroke();
+      fill(8, 115, 216, 72);
+      beginShape();
+      vertex(backX + tubeLength * 0.34, -tubeWidth * 0.42);
+      vertex(backX + tubeLength * 0.62, -tubeWidth * 0.45);
+      vertex(backX + tubeLength * 0.66, tubeWidth * 0.38);
+      vertex(backX + tubeLength * 0.36, tubeWidth * 0.42);
+      endShape(CLOSE);
+
+      fill(255, 255, 246, 56);
+      beginShape();
+      vertex(backX + tubeLength * 0.4, -tubeWidth * 0.34);
+      vertex(backX + tubeLength * 0.55, -tubeWidth * 0.36);
+      vertex(backX + tubeLength * 0.58, tubeWidth * 0.32);
+      vertex(backX + tubeLength * 0.43, tubeWidth * 0.34);
+      endShape(CLOSE);
+
+      fill(38, 39, 31, 58);
+      beginShape();
+      vertex(backX + tubeLength * 0.34, -tubeWidth * 0.08);
+      vertex(backX + tubeLength * 0.66, -tubeWidth * 0.11);
+      vertex(backX + tubeLength * 0.67, tubeWidth * 0.1);
+      vertex(backX + tubeLength * 0.35, tubeWidth * 0.13);
+      endShape(CLOSE);
+
+      stroke(38, 39, 31, 78);
+      strokeWeight(1.05);
+      fill(224, 229, 219, 104);
+      ellipse(frontX, 0, tubeWidth * 1.18, tubeWidth * 1.08);
+
+      fill(251, 249, 233, 182);
+      ellipse(frontX, 0, tubeWidth * 0.78, tubeWidth * 0.68);
+
+      noFill();
+      stroke(8, 115, 216, 78);
+      strokeWeight(1);
+      ellipse(frontX, 0, tubeWidth * 0.5, tubeWidth * 0.44);
+
+      noStroke();
+      fill(255, 255, 246, 76);
+      ellipse(frontX - tubeWidth * 0.12, -tubeWidth * 0.16, tubeWidth * 0.18, tubeWidth * 0.1);
+
+      pop();
+
+      noFill();
+      stroke(38, 39, 31, 26);
+      strokeWeight(1);
+      const mouthX = emitter.x + cos(emitter.angle) * frontX;
+      const mouthY = emitter.y + sin(emitter.angle) * frontX;
+      for (let i = 0; i < 3; i += 1) {
+        const reach = (width < 700 ? 68 : 106) + i * 28;
+        bezier(
+          mouthX,
+          mouthY,
+          mouthX + reach * 0.25,
+          mouthY - 22 + i * 12,
+          mouthX + reach * 0.72,
+          mouthY + 4 + i * 16,
+          mouthX + reach,
+          mouthY + 16 + i * 20
+        );
+      }
+    }
+
+    function drawShuttle(item) {
+      push();
+      translate(item.x, item.y);
+      rotate(item.rot);
+      scale(item.s);
+
+      stroke(31, 32, 26, item.alpha * 0.7);
+      strokeWeight(1.2);
+      noFill();
+      for (let i = 0; i < 6; i += 1) {
+        const offset = map(i, 0, 5, -21, 21);
+        line(0, 0, offset, -64);
+        line(offset, -64, offset * 1.28, -86);
+      }
+
+      stroke(31, 32, 26, item.alpha * 0.56);
+      arc(0, -62, 62, 30, PI + 0.16, TWO_PI - 0.16);
+
+      noStroke();
+      fill(245, 244, 229, item.alpha * 0.76);
+      quad(-26, -82, 26, -82, 18, -36, -18, -36);
+
+      stroke(31, 32, 26, item.alpha * 0.64);
+      strokeWeight(1);
+      for (let i = 0; i < 5; i += 1) {
+        const x = map(i, 0, 4, -20, 20);
+        line(x, -78, x * 0.7, -38);
+      }
+
+      noStroke();
+      fill(8, 115, 216, item.blue);
+      circle(0, 0, 23);
+      fill(255, 255, 255, 70);
+      circle(-5, -5, 7);
+      pop();
+    }
+
+    function mouseMoved() {
+      wind = map(mouseX, 0, width, -1, 1);
+    }
+
+    function touchMoved() {
+      wind = map(mouseX, 0, width, -1, 1);
+      return true;
+    }
+
+    function mousePressed() {
+      dropCluster(mouseX, mouseY);
+    }
+
+    function touchStarted(event) {
+      if (event.target.closest("button, a")) return true;
+      dropCluster(mouseX, mouseY);
+      return true;
+    }
+
+    function dropCluster(x, y) {
+      if (reducedMotion) return;
+      for (let i = 0; i < 7; i += 1) {
+        shuttles.push(makeShuttle(x + random(-14, 14), y + random(-14, 14), true));
+      }
+      while (shuttles.length > 70) shuttles.shift();
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+      updateEmitter();
+      paperSpecks.length = 0;
+      for (let i = 0; i < 190; i += 1) {
+        paperSpecks.push({
+          x: random(width),
+          y: random(height),
+          s: random(0.4, 1.8),
+          a: random(18, 62)
+        });
+      }
+    }
+  </script>
+</body>
+</html>

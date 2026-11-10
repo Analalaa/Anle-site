@@ -183,7 +183,10 @@ def main():
                 d = p[lang]
                 name = d.get('name',p['name'])
                 detail_url = url(lang,'projects/'+p['slug']+'.html')
-                body += f'<article class="event-card"><a class="work-cover" href="{detail_url}" aria-label="{E(("了解 " if zh else "About ")+name,quote=True)}">{artwork(p,lang)}</a><div class="event-card-copy"><p class="event-role">{E(d.get("role",""))}</p><h3><a href="{detail_url}">{E(name)}</a></h3><p class="work-tagline">{E(d["tagline"])}</p><p class="work-description">{E(d["description"])}</p><a class="work-more" href="{detail_url}">{"了解这个系列" if zh else "Explore the series"} →</a></div></article>'
+                body += f'<article class="event-card"><a class="work-cover" href="{detail_url}" aria-label="{E(("了解 " if zh else "About ")+name,quote=True)}">{artwork(p,lang)}</a><div class="event-card-copy"><p class="event-role">{E(d.get("role",""))}</p><h3><a href="{detail_url}">{E(name)}</a></h3><p class="work-tagline">{E(d["tagline"])}</p><p class="work-description">{E(d["description"])}</p><div class="work-actions">'
+                if p.get('welcomeUrl'):
+                    body += external(p['welcomeUrl'], ('打开欢迎页' if zh else 'Open welcome page') + ' ↗', 'work-primary')
+                body += f'<a class="work-more" href="{detail_url}">{"了解这个系列" if zh else "Explore the series"} →</a></div></div></article>'
             body += '</div></section>'
         body += '<section class="project-collection" id="products" aria-labelledby="products-title"><div class="collection-heading"><h2 id="products-title">' + ('小产品' if zh else 'Small products') + f'</h2><span>{len(products):02d}</span></div><div class="work-grid">'
         for i,p in enumerate(products,1):
@@ -209,6 +212,8 @@ def main():
             if is_series:
                 if d.get('role'):
                     body += f'<p class="series-role"><span>{"我的角色" if zh else "My role"}</span>{E(d["role"])}</p>'
+                if p.get('welcomeUrl'):
+                    body += '<div class="detail-launch">' + external(p['welcomeUrl'], ('打开欢迎页' if zh else 'Open welcome page') + ' ↗', 'work-primary') + '</div>'
                 cover_caption = d.get('coverCaption', '活动视觉' if zh else 'Event visual') if p.get('cover') else ('废弃羽毛球与球桶的概念插画' if zh else 'A conceptual illustration of used shuttlecocks and tubes')
                 body += '<figure class="work-detail-art series-detail-art">' + artwork(p,lang) + '<figcaption>' + E(cover_caption) + '</figcaption></figure>'
             else:
